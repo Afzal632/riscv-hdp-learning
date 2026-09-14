@@ -1,0 +1,2 @@
+O0 total static instructions: 165
+O2 total static instructions: 61

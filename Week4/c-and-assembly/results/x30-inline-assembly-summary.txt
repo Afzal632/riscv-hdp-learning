@@ -1,0 +1,22 @@
+Custom x30 GPIO interface — RV32I -O2
+
+Reading x30:
+   0:	000f0513          	addi	x10,x30,0
+   c:	000f0513          	addi	x10,x30,0
+  38:	000f0513          	addi	x10,x30,0
+
+Masked output write:
+  18:	00f57513          	andi	x10,x10,15
+  1c:	ff000793          	addi	x15,x0,-16
+  20:	00ff7f33          	and	x30,x30,x15
+  24:	00af6f33          	or	x30,x30,x10
+
+Optimized controller interface:
+Week4/c-and-assembly/build/x30-gpio-O2.o:     file format elf32-littleriscv
+0000002c <controller_step_x30>:
+  38:	000f0513          	addi	x10,x30,0
+			3c: R_RISCV_CALL_PLT	controller_step
+  40:	000080e7          	jalr	x1,0(x1) # 3c <.LBE15>
+  4c:	00ff7f33          	and	x30,x30,x15
+  50:	00af6f33          	or	x30,x30,x10
+  5c:	00008067          	jalr	x0,0(x1)

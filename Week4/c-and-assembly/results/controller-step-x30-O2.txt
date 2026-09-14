@@ -1,0 +1,32 @@
+
+Week4/c-and-assembly/build/x30-gpio-O2.o:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+0000002c <controller_step_x30>:
+  2c:	ff010113          	addi	x2,x2,-16
+  30:	00112623          	sw	x1,12(x2)
+  34:	00050593          	addi	x11,x10,0
+
+00000038 <.LBB15>:
+  38:	000f0513          	addi	x10,x30,0
+
+0000003c <.LBE15>:
+  3c:	00000097          	auipc	x1,0x0
+			3c: R_RISCV_CALL_PLT	controller_step
+			3c: R_RISCV_RELAX	*ABS*
+  40:	000080e7          	jalr	x1,0(x1) # 3c <.LBE15>
+
+00000044 <.LBB16>:
+  44:	00f57513          	andi	x10,x10,15
+
+00000048 <.LVL9>:
+  48:	ff000793          	addi	x15,x0,-16
+  4c:	00ff7f33          	and	x30,x30,x15
+  50:	00af6f33          	or	x30,x30,x10
+
+00000054 <.LBE16>:
+  54:	00c12083          	lw	x1,12(x2)
+  58:	01010113          	addi	x2,x2,16
+  5c:	00008067          	jalr	x0,0(x1)

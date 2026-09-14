@@ -1,0 +1,106 @@
+
+Week4/c-and-assembly/build/controller-O0.o:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000180 <controller_step>:
+ 180:	fd010113          	addi	x2,x2,-48
+ 184:	02112623          	sw	x1,44(x2)
+ 188:	02812423          	sw	x8,40(x2)
+ 18c:	03010413          	addi	x8,x2,48
+ 190:	fca42e23          	sw	x10,-36(x8)
+ 194:	fcb42c23          	sw	x11,-40(x8)
+ 198:	01f00593          	addi	x11,x0,31
+ 19c:	fdc42503          	lw	x10,-36(x8)
+ 1a0:	00000097          	auipc	x1,0x0
+			1a0: R_RISCV_CALL_PLT	digital_read
+			1a0: R_RISCV_RELAX	*ABS*
+ 1a4:	000080e7          	jalr	x1,0(x1) # 1a0 <controller_step+0x20>
+ 1a8:	fea42623          	sw	x10,-20(x8)
+ 1ac:	01e00593          	addi	x11,x0,30
+ 1b0:	fdc42503          	lw	x10,-36(x8)
+ 1b4:	00000097          	auipc	x1,0x0
+			1b4: R_RISCV_CALL_PLT	digital_read
+			1b4: R_RISCV_RELAX	*ABS*
+ 1b8:	000080e7          	jalr	x1,0(x1) # 1b4 <controller_step+0x34>
+ 1bc:	fea42423          	sw	x10,-24(x8)
+ 1c0:	01d00593          	addi	x11,x0,29
+ 1c4:	fdc42503          	lw	x10,-36(x8)
+ 1c8:	00000097          	auipc	x1,0x0
+			1c8: R_RISCV_CALL_PLT	digital_read
+			1c8: R_RISCV_RELAX	*ABS*
+ 1cc:	000080e7          	jalr	x1,0(x1) # 1c8 <controller_step+0x48>
+ 1d0:	fea42223          	sw	x10,-28(x8)
+ 1d4:	01c00593          	addi	x11,x0,28
+ 1d8:	fdc42503          	lw	x10,-36(x8)
+ 1dc:	00000097          	auipc	x1,0x0
+			1dc: R_RISCV_CALL_PLT	digital_read
+			1dc: R_RISCV_RELAX	*ABS*
+ 1e0:	000080e7          	jalr	x1,0(x1) # 1dc <controller_step+0x5c>
+ 1e4:	fea42023          	sw	x10,-32(x8)
+ 1e8:	fe442783          	lw	x15,-28(x8)
+ 1ec:	00078a63          	beq	x15,x0,200 <.L10>
+			1ec: R_RISCV_BRANCH	.L10
+ 1f0:	fd842783          	lw	x15,-40(x8)
+ 1f4:	00200713          	addi	x14,x0,2
+ 1f8:	00e7a023          	sw	x14,0(x15)
+ 1fc:	0680006f          	jal	x0,264 <.L11>
+			1fc: R_RISCV_JAL	.L11
+
+00000200 <.L10>:
+ 200:	fd842783          	lw	x15,-40(x8)
+ 204:	0007a703          	lw	x14,0(x15)
+ 208:	00200793          	addi	x15,x0,2
+ 20c:	02f71063          	bne	x14,x15,22c <.L12>
+			20c: R_RISCV_BRANCH	.L12
+ 210:	fe042783          	lw	x15,-32(x8)
+ 214:	04078863          	beq	x15,x0,264 <.L11>
+			214: R_RISCV_BRANCH	.L11
+ 218:	fe842783          	lw	x15,-24(x8)
+ 21c:	04079463          	bne	x15,x0,264 <.L11>
+			21c: R_RISCV_BRANCH	.L11
+ 220:	fd842783          	lw	x15,-40(x8)
+ 224:	0007a023          	sw	x0,0(x15)
+ 228:	03c0006f          	jal	x0,264 <.L11>
+			228: R_RISCV_JAL	.L11
+
+0000022c <.L12>:
+ 22c:	fec42783          	lw	x15,-20(x8)
+ 230:	00079863          	bne	x15,x0,240 <.L13>
+			230: R_RISCV_BRANCH	.L13
+ 234:	fd842783          	lw	x15,-40(x8)
+ 238:	0007a023          	sw	x0,0(x15)
+ 23c:	0280006f          	jal	x0,264 <.L11>
+			23c: R_RISCV_JAL	.L11
+
+00000240 <.L13>:
+ 240:	fe842783          	lw	x15,-24(x8)
+ 244:	00078a63          	beq	x15,x0,258 <.L14>
+			244: R_RISCV_BRANCH	.L14
+ 248:	fd842783          	lw	x15,-40(x8)
+ 24c:	00200713          	addi	x14,x0,2
+ 250:	00e7a023          	sw	x14,0(x15)
+ 254:	0100006f          	jal	x0,264 <.L11>
+			254: R_RISCV_JAL	.L11
+
+00000258 <.L14>:
+ 258:	fd842783          	lw	x15,-40(x8)
+ 25c:	00100713          	addi	x14,x0,1
+ 260:	00e7a023          	sw	x14,0(x15)
+
+00000264 <.L11>:
+ 264:	fd842783          	lw	x15,-40(x8)
+ 268:	0007a783          	lw	x15,0(x15)
+ 26c:	00078593          	addi	x11,x15,0
+ 270:	fdc42503          	lw	x10,-36(x8)
+ 274:	00000097          	auipc	x1,0x0
+			274: R_RISCV_CALL_PLT	update_outputs
+			274: R_RISCV_RELAX	*ABS*
+ 278:	000080e7          	jalr	x1,0(x1) # 274 <.L11+0x10>
+ 27c:	00050793          	addi	x15,x10,0
+ 280:	00078513          	addi	x10,x15,0
+ 284:	02c12083          	lw	x1,44(x2)
+ 288:	02812403          	lw	x8,40(x2)
+ 28c:	03010113          	addi	x2,x2,48
+ 290:	00008067          	jalr	x0,0(x1)

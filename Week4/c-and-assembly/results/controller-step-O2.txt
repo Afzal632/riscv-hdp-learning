@@ -1,0 +1,106 @@
+
+Week4/c-and-assembly/build/controller-O2.o:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000044 <controller_step>:
+  44:	200007b7          	lui	x15,0x20000
+  48:	00f577b3          	and	x15,x10,x15
+  4c:	02079e63          	bne	x15,x0,88 <.L14>
+			4c: R_RISCV_BRANCH	.L14
+  50:	0005a603          	lw	x12,0(x11)
+
+00000054 <.LBB51>:
+  54:	01e55713          	srli	x14,x10,0x1e
+
+00000058 <.LBE51>:
+  58:	00200693          	addi	x13,x0,2
+
+0000005c <.LBB52>:
+  5c:	00177713          	andi	x14,x14,1
+
+00000060 <.LBE52>:
+  60:	04d60e63          	beq	x12,x13,bc <.L22>
+			60: R_RISCV_BRANCH	.L22
+
+00000064 <.LBB53>:
+  64:	01f55813          	srli	x16,x10,0x1f
+
+00000068 <.LBE53>:
+  68:	06055063          	bge	x10,x0,c8 <.L13>
+			68: R_RISCV_BRANCH	.L13
+  6c:	00071e63          	bne	x14,x0,88 <.L14>
+			6c: R_RISCV_BRANCH	.L14
+  70:	00100793          	addi	x15,x0,1
+  74:	00f5a023          	sw	x15,0(x11)
+  78:	00000693          	addi	x13,x0,0
+  7c:	00000613          	addi	x12,x0,0
+  80:	00080793          	addi	x15,x16,0
+  84:	01c0006f          	jal	x0,a0 <.L10>
+			84: R_RISCV_JAL	.L10
+
+00000088 <.L14>:
+  88:	00200793          	addi	x15,x0,2
+  8c:	00f5a023          	sw	x15,0(x11)
+
+00000090 <.L12>:
+  90:	00800693          	addi	x13,x0,8
+  94:	00400613          	addi	x12,x0,4
+  98:	00200713          	addi	x14,x0,2
+  9c:	00000793          	addi	x15,x0,0
+
+000000a0 <.L10>:
+  a0:	ffc57513          	andi	x10,x10,-4
+
+000000a4 <.LBB86>:
+  a4:	00f56533          	or	x10,x10,x15
+
+000000a8 <.LBB109>:
+  a8:	00e56533          	or	x10,x10,x14
+
+000000ac <.LBB110>:
+  ac:	ff357513          	andi	x10,x10,-13
+
+000000b0 <.LBB125>:
+  b0:	00c56533          	or	x10,x10,x12
+
+000000b4 <.LBE125>:
+  b4:	00d56533          	or	x10,x10,x13
+  b8:	00008067          	jalr	x0,0(x1)
+
+000000bc <.L22>:
+  bc:	00351693          	slli	x13,x10,0x3
+  c0:	fc06d8e3          	bge	x13,x0,90 <.L12>
+			c0: R_RISCV_BRANCH	.L12
+  c4:	fc0716e3          	bne	x14,x0,90 <.L12>
+			c4: R_RISCV_BRANCH	.L12
+
+000000c8 <.L13>:
+  c8:	ffc57513          	andi	x10,x10,-4
+
+000000cc <.LBE126>:
+  cc:	00000713          	addi	x14,x0,0
+
+000000d0 <.LBB127>:
+  d0:	00f56533          	or	x10,x10,x15
+
+000000d4 <.LBB129>:
+  d4:	00e56533          	or	x10,x10,x14
+
+000000d8 <.LBB131>:
+  d8:	00000613          	addi	x12,x0,0
+
+000000dc <.LBB132>:
+  dc:	ff357513          	andi	x10,x10,-13
+
+000000e0 <.LBE134>:
+  e0:	00000693          	addi	x13,x0,0
+
+000000e4 <.LBB135>:
+  e4:	00c56533          	or	x10,x10,x12
+
+000000e8 <.LBE135>:
+  e8:	0005a023          	sw	x0,0(x11)
+  ec:	00d56533          	or	x10,x10,x13
+  f0:	00008067          	jalr	x0,0(x1)

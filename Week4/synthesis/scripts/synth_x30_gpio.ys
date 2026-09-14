@@ -1,0 +1,11 @@
+read_verilog Week4/gpio-rtl/rtl/x30_gpio_bridge.v
+
+hierarchy -check -top x30_gpio_bridge
+
+synth -top x30_gpio_bridge
+
+check
+stat
+
+write_verilog -noattr -noexpr Week4/synthesis/netlist/x30_gpio_bridge_netlist.v
+write_json Week4/synthesis/netlist/x30_gpio_bridge_netlist.json

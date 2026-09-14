@@ -1,0 +1,89 @@
+
+Week4/c-and-assembly/build/x30-gpio-O0.o:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <x30_read_snapshot>:
+   0:	fe010113          	addi	x2,x2,-32
+   4:	00812e23          	sw	x8,28(x2)
+   8:	02010413          	addi	x8,x2,32
+   c:	000f0793          	addi	x15,x30,0
+  10:	fef42623          	sw	x15,-20(x8)
+  14:	fec42783          	lw	x15,-20(x8)
+  18:	00078513          	addi	x10,x15,0
+  1c:	01c12403          	lw	x8,28(x2)
+  20:	02010113          	addi	x2,x2,32
+  24:	00008067          	jalr	x0,0(x1)
+
+00000028 <x30_digital_read>:
+  28:	fd010113          	addi	x2,x2,-48
+  2c:	02112623          	sw	x1,44(x2)
+  30:	02812423          	sw	x8,40(x2)
+  34:	03010413          	addi	x8,x2,48
+  38:	fca42e23          	sw	x10,-36(x8)
+  3c:	00000097          	auipc	x1,0x0
+			3c: R_RISCV_CALL_PLT	x30_read_snapshot
+			3c: R_RISCV_RELAX	*ABS*
+  40:	000080e7          	jalr	x1,0(x1) # 3c <x30_digital_read+0x14>
+  44:	fea42623          	sw	x10,-20(x8)
+  48:	fdc42583          	lw	x11,-36(x8)
+  4c:	fec42503          	lw	x10,-20(x8)
+  50:	00000097          	auipc	x1,0x0
+			50: R_RISCV_CALL_PLT	digital_read
+			50: R_RISCV_RELAX	*ABS*
+  54:	000080e7          	jalr	x1,0(x1) # 50 <x30_digital_read+0x28>
+  58:	00050793          	addi	x15,x10,0
+  5c:	00078513          	addi	x10,x15,0
+  60:	02c12083          	lw	x1,44(x2)
+  64:	02812403          	lw	x8,40(x2)
+  68:	03010113          	addi	x2,x2,48
+  6c:	00008067          	jalr	x0,0(x1)
+
+00000070 <x30_write_outputs>:
+  70:	fd010113          	addi	x2,x2,-48
+  74:	02812623          	sw	x8,44(x2)
+  78:	03010413          	addi	x8,x2,48
+  7c:	fca42e23          	sw	x10,-36(x8)
+  80:	ff000793          	addi	x15,x0,-16
+  84:	fef42623          	sw	x15,-20(x8)
+  88:	fdc42783          	lw	x15,-36(x8)
+  8c:	00f7f793          	andi	x15,x15,15
+  90:	fcf42e23          	sw	x15,-36(x8)
+  94:	fec42783          	lw	x15,-20(x8)
+  98:	fdc42703          	lw	x14,-36(x8)
+  9c:	00ff7f33          	and	x30,x30,x15
+  a0:	00ef6f33          	or	x30,x30,x14
+  a4:	00000013          	addi	x0,x0,0
+  a8:	02c12403          	lw	x8,44(x2)
+  ac:	03010113          	addi	x2,x2,48
+  b0:	00008067          	jalr	x0,0(x1)
+
+000000b4 <controller_step_x30>:
+  b4:	fd010113          	addi	x2,x2,-48
+  b8:	02112623          	sw	x1,44(x2)
+  bc:	02812423          	sw	x8,40(x2)
+  c0:	03010413          	addi	x8,x2,48
+  c4:	fca42e23          	sw	x10,-36(x8)
+  c8:	00000097          	auipc	x1,0x0
+			c8: R_RISCV_CALL_PLT	x30_read_snapshot
+			c8: R_RISCV_RELAX	*ABS*
+  cc:	000080e7          	jalr	x1,0(x1) # c8 <controller_step_x30+0x14>
+  d0:	fea42623          	sw	x10,-20(x8)
+  d4:	fdc42583          	lw	x11,-36(x8)
+  d8:	fec42503          	lw	x10,-20(x8)
+  dc:	00000097          	auipc	x1,0x0
+			dc: R_RISCV_CALL_PLT	controller_step
+			dc: R_RISCV_RELAX	*ABS*
+  e0:	000080e7          	jalr	x1,0(x1) # dc <controller_step_x30+0x28>
+  e4:	fea42423          	sw	x10,-24(x8)
+  e8:	fe842503          	lw	x10,-24(x8)
+  ec:	00000097          	auipc	x1,0x0
+			ec: R_RISCV_CALL_PLT	x30_write_outputs
+			ec: R_RISCV_RELAX	*ABS*
+  f0:	000080e7          	jalr	x1,0(x1) # ec <controller_step_x30+0x38>
+  f4:	00000013          	addi	x0,x0,0
+  f8:	02c12083          	lw	x1,44(x2)
+  fc:	02812403          	lw	x8,40(x2)
+ 100:	03010113          	addi	x2,x2,48
+ 104:	00008067          	jalr	x0,0(x1)

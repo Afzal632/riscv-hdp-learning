@@ -1,0 +1,12 @@
+PASS Reset                            x30=0x00000000 outputs=0x0
+PASS Only low output field stored     x30=0x0000000f outputs=0xf
+PASS Open while disarmed              x30=0x40000000 outputs=0x0
+PASS Armed with enclosure closed      x30=0x80000001 outputs=0x1
+PASS Open while armed                 x30=0xc000000e outputs=0xe
+PASS Alert outputs retained           x30=0x0000000e outputs=0xe
+PASS Unsafe reset retains alert       x30=0x5000000e outputs=0xe
+PASS Safe reset clears outputs        x30=0x10000000 outputs=0x0
+PASS Tamper activates outputs         x30=0x2000000e outputs=0xe
+PASS Reset blocked by tamper          x30=0x3000000e outputs=0xe
+PASS Safe reset after tamper          x30=0x10000000 outputs=0x0
+All 11 GPIO bridge checks passed.

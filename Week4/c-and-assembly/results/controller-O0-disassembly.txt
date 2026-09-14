@@ -1,0 +1,228 @@
+
+Week4/c-and-assembly/build/controller-O0.o:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <digital_read>:
+   0:	fe010113          	addi	x2,x2,-32
+   4:	00812e23          	sw	x8,28(x2)
+   8:	02010413          	addi	x8,x2,32
+   c:	fea42623          	sw	x10,-20(x8)
+  10:	feb42423          	sw	x11,-24(x8)
+  14:	fe842703          	lw	x14,-24(x8)
+  18:	01f00793          	addi	x15,x0,31
+  1c:	00e7f663          	bgeu	x15,x14,28 <.L2>
+			1c: R_RISCV_BRANCH	.L2
+  20:	00000793          	addi	x15,x0,0
+  24:	0140006f          	jal	x0,38 <.L3>
+			24: R_RISCV_JAL	.L3
+
+00000028 <.L2>:
+  28:	fe842783          	lw	x15,-24(x8)
+  2c:	fec42703          	lw	x14,-20(x8)
+  30:	00f757b3          	srl	x15,x14,x15
+  34:	0017f793          	andi	x15,x15,1
+
+00000038 <.L3>:
+  38:	00078513          	addi	x10,x15,0
+  3c:	01c12403          	lw	x8,28(x2)
+  40:	02010113          	addi	x2,x2,32
+  44:	00008067          	jalr	x0,0(x1)
+
+00000048 <digital_write>:
+  48:	fd010113          	addi	x2,x2,-48
+  4c:	02812623          	sw	x8,44(x2)
+  50:	03010413          	addi	x8,x2,48
+  54:	fca42e23          	sw	x10,-36(x8)
+  58:	fcb42c23          	sw	x11,-40(x8)
+  5c:	fcc42a23          	sw	x12,-44(x8)
+  60:	fd842703          	lw	x14,-40(x8)
+  64:	01f00793          	addi	x15,x0,31
+  68:	00e7f663          	bgeu	x15,x14,74 <.L5>
+			68: R_RISCV_BRANCH	.L5
+  6c:	fdc42783          	lw	x15,-36(x8)
+  70:	0480006f          	jal	x0,b8 <.L6>
+			70: R_RISCV_JAL	.L6
+
+00000074 <.L5>:
+  74:	fd842783          	lw	x15,-40(x8)
+  78:	00100713          	addi	x14,x0,1
+  7c:	00f717b3          	sll	x15,x14,x15
+  80:	fef42623          	sw	x15,-20(x8)
+  84:	fec42783          	lw	x15,-20(x8)
+  88:	fff7c793          	xori	x15,x15,-1
+  8c:	fdc42703          	lw	x14,-36(x8)
+  90:	00f777b3          	and	x15,x14,x15
+  94:	fcf42e23          	sw	x15,-36(x8)
+  98:	fd442783          	lw	x15,-44(x8)
+  9c:	0017f713          	andi	x14,x15,1
+  a0:	fd842783          	lw	x15,-40(x8)
+  a4:	00f717b3          	sll	x15,x14,x15
+  a8:	fdc42703          	lw	x14,-36(x8)
+  ac:	00f767b3          	or	x15,x14,x15
+  b0:	fcf42e23          	sw	x15,-36(x8)
+  b4:	fdc42783          	lw	x15,-36(x8)
+
+000000b8 <.L6>:
+  b8:	00078513          	addi	x10,x15,0
+  bc:	02c12403          	lw	x8,44(x2)
+  c0:	03010113          	addi	x2,x2,48
+  c4:	00008067          	jalr	x0,0(x1)
+
+000000c8 <update_outputs>:
+  c8:	fd010113          	addi	x2,x2,-48
+  cc:	02112623          	sw	x1,44(x2)
+  d0:	02812423          	sw	x8,40(x2)
+  d4:	03010413          	addi	x8,x2,48
+  d8:	fca42e23          	sw	x10,-36(x8)
+  dc:	fcb42c23          	sw	x11,-40(x8)
+  e0:	fd842783          	lw	x15,-40(x8)
+  e4:	fff78793          	addi	x15,x15,-1
+  e8:	0017b793          	sltiu	x15,x15,1
+  ec:	0ff7f793          	andi	x15,x15,255
+  f0:	fef42623          	sw	x15,-20(x8)
+  f4:	fd842783          	lw	x15,-40(x8)
+  f8:	ffe78793          	addi	x15,x15,-2
+  fc:	0017b793          	sltiu	x15,x15,1
+ 100:	0ff7f793          	andi	x15,x15,255
+ 104:	fef42423          	sw	x15,-24(x8)
+ 108:	fec42603          	lw	x12,-20(x8)
+ 10c:	00000593          	addi	x11,x0,0
+ 110:	fdc42503          	lw	x10,-36(x8)
+ 114:	00000097          	auipc	x1,0x0
+			114: R_RISCV_CALL_PLT	digital_write
+			114: R_RISCV_RELAX	*ABS*
+ 118:	000080e7          	jalr	x1,0(x1) # 114 <update_outputs+0x4c>
+ 11c:	fca42e23          	sw	x10,-36(x8)
+ 120:	fe842603          	lw	x12,-24(x8)
+ 124:	00100593          	addi	x11,x0,1
+ 128:	fdc42503          	lw	x10,-36(x8)
+ 12c:	00000097          	auipc	x1,0x0
+			12c: R_RISCV_CALL_PLT	digital_write
+			12c: R_RISCV_RELAX	*ABS*
+ 130:	000080e7          	jalr	x1,0(x1) # 12c <update_outputs+0x64>
+ 134:	fca42e23          	sw	x10,-36(x8)
+ 138:	fe842603          	lw	x12,-24(x8)
+ 13c:	00200593          	addi	x11,x0,2
+ 140:	fdc42503          	lw	x10,-36(x8)
+ 144:	00000097          	auipc	x1,0x0
+			144: R_RISCV_CALL_PLT	digital_write
+			144: R_RISCV_RELAX	*ABS*
+ 148:	000080e7          	jalr	x1,0(x1) # 144 <update_outputs+0x7c>
+ 14c:	fca42e23          	sw	x10,-36(x8)
+ 150:	fe842603          	lw	x12,-24(x8)
+ 154:	00300593          	addi	x11,x0,3
+ 158:	fdc42503          	lw	x10,-36(x8)
+ 15c:	00000097          	auipc	x1,0x0
+			15c: R_RISCV_CALL_PLT	digital_write
+			15c: R_RISCV_RELAX	*ABS*
+ 160:	000080e7          	jalr	x1,0(x1) # 15c <update_outputs+0x94>
+ 164:	fca42e23          	sw	x10,-36(x8)
+ 168:	fdc42783          	lw	x15,-36(x8)
+ 16c:	00078513          	addi	x10,x15,0
+ 170:	02c12083          	lw	x1,44(x2)
+ 174:	02812403          	lw	x8,40(x2)
+ 178:	03010113          	addi	x2,x2,48
+ 17c:	00008067          	jalr	x0,0(x1)
+
+00000180 <controller_step>:
+ 180:	fd010113          	addi	x2,x2,-48
+ 184:	02112623          	sw	x1,44(x2)
+ 188:	02812423          	sw	x8,40(x2)
+ 18c:	03010413          	addi	x8,x2,48
+ 190:	fca42e23          	sw	x10,-36(x8)
+ 194:	fcb42c23          	sw	x11,-40(x8)
+ 198:	01f00593          	addi	x11,x0,31
+ 19c:	fdc42503          	lw	x10,-36(x8)
+ 1a0:	00000097          	auipc	x1,0x0
+			1a0: R_RISCV_CALL_PLT	digital_read
+			1a0: R_RISCV_RELAX	*ABS*
+ 1a4:	000080e7          	jalr	x1,0(x1) # 1a0 <controller_step+0x20>
+ 1a8:	fea42623          	sw	x10,-20(x8)
+ 1ac:	01e00593          	addi	x11,x0,30
+ 1b0:	fdc42503          	lw	x10,-36(x8)
+ 1b4:	00000097          	auipc	x1,0x0
+			1b4: R_RISCV_CALL_PLT	digital_read
+			1b4: R_RISCV_RELAX	*ABS*
+ 1b8:	000080e7          	jalr	x1,0(x1) # 1b4 <controller_step+0x34>
+ 1bc:	fea42423          	sw	x10,-24(x8)
+ 1c0:	01d00593          	addi	x11,x0,29
+ 1c4:	fdc42503          	lw	x10,-36(x8)
+ 1c8:	00000097          	auipc	x1,0x0
+			1c8: R_RISCV_CALL_PLT	digital_read
+			1c8: R_RISCV_RELAX	*ABS*
+ 1cc:	000080e7          	jalr	x1,0(x1) # 1c8 <controller_step+0x48>
+ 1d0:	fea42223          	sw	x10,-28(x8)
+ 1d4:	01c00593          	addi	x11,x0,28
+ 1d8:	fdc42503          	lw	x10,-36(x8)
+ 1dc:	00000097          	auipc	x1,0x0
+			1dc: R_RISCV_CALL_PLT	digital_read
+			1dc: R_RISCV_RELAX	*ABS*
+ 1e0:	000080e7          	jalr	x1,0(x1) # 1dc <controller_step+0x5c>
+ 1e4:	fea42023          	sw	x10,-32(x8)
+ 1e8:	fe442783          	lw	x15,-28(x8)
+ 1ec:	00078a63          	beq	x15,x0,200 <.L10>
+			1ec: R_RISCV_BRANCH	.L10
+ 1f0:	fd842783          	lw	x15,-40(x8)
+ 1f4:	00200713          	addi	x14,x0,2
+ 1f8:	00e7a023          	sw	x14,0(x15)
+ 1fc:	0680006f          	jal	x0,264 <.L11>
+			1fc: R_RISCV_JAL	.L11
+
+00000200 <.L10>:
+ 200:	fd842783          	lw	x15,-40(x8)
+ 204:	0007a703          	lw	x14,0(x15)
+ 208:	00200793          	addi	x15,x0,2
+ 20c:	02f71063          	bne	x14,x15,22c <.L12>
+			20c: R_RISCV_BRANCH	.L12
+ 210:	fe042783          	lw	x15,-32(x8)
+ 214:	04078863          	beq	x15,x0,264 <.L11>
+			214: R_RISCV_BRANCH	.L11
+ 218:	fe842783          	lw	x15,-24(x8)
+ 21c:	04079463          	bne	x15,x0,264 <.L11>
+			21c: R_RISCV_BRANCH	.L11
+ 220:	fd842783          	lw	x15,-40(x8)
+ 224:	0007a023          	sw	x0,0(x15)
+ 228:	03c0006f          	jal	x0,264 <.L11>
+			228: R_RISCV_JAL	.L11
+
+0000022c <.L12>:
+ 22c:	fec42783          	lw	x15,-20(x8)
+ 230:	00079863          	bne	x15,x0,240 <.L13>
+			230: R_RISCV_BRANCH	.L13
+ 234:	fd842783          	lw	x15,-40(x8)
+ 238:	0007a023          	sw	x0,0(x15)
+ 23c:	0280006f          	jal	x0,264 <.L11>
+			23c: R_RISCV_JAL	.L11
+
+00000240 <.L13>:
+ 240:	fe842783          	lw	x15,-24(x8)
+ 244:	00078a63          	beq	x15,x0,258 <.L14>
+			244: R_RISCV_BRANCH	.L14
+ 248:	fd842783          	lw	x15,-40(x8)
+ 24c:	00200713          	addi	x14,x0,2
+ 250:	00e7a023          	sw	x14,0(x15)
+ 254:	0100006f          	jal	x0,264 <.L11>
+			254: R_RISCV_JAL	.L11
+
+00000258 <.L14>:
+ 258:	fd842783          	lw	x15,-40(x8)
+ 25c:	00100713          	addi	x14,x0,1
+ 260:	00e7a023          	sw	x14,0(x15)
+
+00000264 <.L11>:
+ 264:	fd842783          	lw	x15,-40(x8)
+ 268:	0007a783          	lw	x15,0(x15)
+ 26c:	00078593          	addi	x11,x15,0
+ 270:	fdc42503          	lw	x10,-36(x8)
+ 274:	00000097          	auipc	x1,0x0
+			274: R_RISCV_CALL_PLT	update_outputs
+			274: R_RISCV_RELAX	*ABS*
+ 278:	000080e7          	jalr	x1,0(x1) # 274 <.L11+0x10>
+ 27c:	00050793          	addi	x15,x10,0
+ 280:	00078513          	addi	x10,x15,0
+ 284:	02c12083          	lw	x1,44(x2)
+ 288:	02812403          	lw	x8,40(x2)
+ 28c:	03010113          	addi	x2,x2,48
+ 290:	00008067          	jalr	x0,0(x1)

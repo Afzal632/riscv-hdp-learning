@@ -1,0 +1,14 @@
+
+Week4/c-and-assembly/build/x30-gpio-O2.o:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000018 <x30_write_outputs>:
+  18:	00f57513          	andi	x10,x10,15
+
+0000001c <.LVL5>:
+  1c:	ff000793          	addi	x15,x0,-16
+  20:	00ff7f33          	and	x30,x30,x15
+  24:	00af6f33          	or	x30,x30,x10
+  28:	00008067          	jalr	x0,0(x1)

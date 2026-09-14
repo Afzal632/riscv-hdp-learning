@@ -1,0 +1,23 @@
+x30 GPIO bridge — Yosys synthesis summary
+
+=== x30_gpio_bridge ===
+   Number of wires:                 14
+   Number of wire bits:             79
+   Number of public wires:          14
+   Number of public wire bits:      79
+   Number of memories:               0
+   Number of cells:                  4
+     $_DFFE_PN0P_                    4
+=== x30_gpio_bridge ===
+   Number of wires:                 14
+   Number of wire bits:             79
+   Number of public wires:          14
+   Number of public wire bits:      79
+   Number of memories:               0
+   Number of cells:                  4
+     $_DFFE_PN0P_                    4
+
+Synthesis diagnostics:
+Found and reported 0 problems.
+Found and reported 0 problems.
+Found and reported 0 problems.

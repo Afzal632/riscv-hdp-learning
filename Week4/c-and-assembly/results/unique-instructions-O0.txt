@@ -1,0 +1,16 @@
+addi
+and
+andi
+auipc
+beq
+bgeu
+bne
+jal
+jalr
+lw
+or
+sll
+sltiu
+srl
+sw
+xori

@@ -1,0 +1,11 @@
+Startup                         input=0x00000000 output=0x0 state=DISARMED
+Open while disarmed             input=0x40000000 output=0x0 state=DISARMED
+Arm with enclosure closed       input=0x80000000 output=0x1 state=ARMED
+Open while armed                input=0xc0000000 output=0xe state=ALERT
+Remove trigger without reset    input=0x00000000 output=0xe state=ALERT
+Reset while enclosure open      input=0x50000000 output=0xe state=ALERT
+Safe alarm reset                input=0x10000000 output=0x0 state=DISARMED
+Tamper while disarmed           input=0x20000000 output=0xe state=ALERT
+Reset while tamper active       input=0x30000000 output=0xe state=ALERT
+Reset after tamper removed      input=0x10000000 output=0x0 state=DISARMED
+All controller tests passed.

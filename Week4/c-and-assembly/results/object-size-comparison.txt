@@ -1,0 +1,3 @@
+   text	   data	    bss	    dec	    hex	filename
+    660	      0	      0	    660	    294	Week4/c-and-assembly/build/controller-O0.o
+    244	      0	      0	    244	     f4	Week4/c-and-assembly/build/controller-O2.o

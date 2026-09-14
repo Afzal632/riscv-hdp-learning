@@ -1,0 +1,16 @@
+     48 lw
+     36 addi
+     33 sw
+     13 jalr
+      9 auipc
+      6 jal
+      4 andi
+      3 bne
+      3 beq
+      2 sltiu
+      2 sll
+      2 bgeu
+      1 xori
+      1 srl
+      1 or
+      1 and
