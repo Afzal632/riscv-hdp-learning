@@ -1,0 +1,34 @@
+README line count:
+224 Week2/task3-riscv-analysis/README.md
+
+README sections:
+## Objective
+## Evidence boundary
+## Toolchain
+## Directory structure
+## Compilation method
+## Spike runtime support
+## Final comparison
+## Counter observations
+## ALU observations
+## Four-bit signed and unsigned values
+## Matrix observations
+## Static versus dynamic instructions
+## Screenshot evidence
+## Conclusion
+
+Last five lines:
+Optimization changed how the same C behaviour was expressed as RISC-V instructions.
+
+O2 generally retained values in registers, reduced stack traffic, simplified control flow and used fixed offsets or loop unrolling. Optimized assembly can therefore look substantially different from the original C structure while preserving the tested behaviour.
+
+This experiment connects software to the ISA: C was translated into RV32IM instructions, and Spike executed those instructions according to RISC-V architectural rules. It did not implement or verify the microarchitecture that would execute those instructions in hardware.
+
+Screenshot references:
+15
+
+Screenshot files:
+15
+
+Trailing-whitespace check:
+No trailing whitespace found

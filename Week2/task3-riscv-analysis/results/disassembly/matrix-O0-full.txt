@@ -1,0 +1,310 @@
+
+Week2/task3-riscv-analysis/build/O0/matrix.o:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <matrix_multiply>:
+   0:	fd010113          	addi	x2,x2,-48
+   4:	02812623          	sw	x8,44(x2)
+   8:	03010413          	addi	x8,x2,48
+   c:	fca42e23          	sw	x10,-36(x8)
+  10:	fcb42c23          	sw	x11,-40(x8)
+  14:	fcc42a23          	sw	x12,-44(x8)
+
+00000018 <.LBB2>:
+  18:	fe042623          	sw	x0,-20(x8)
+  1c:	0d80006f          	jal	x0,f4 <.L2>
+			1c: R_RISCV_JAL	.L2
+
+00000020 <.L7>:
+  20:	fe042423          	sw	x0,-24(x8)
+  24:	0b80006f          	jal	x0,dc <.L3>
+			24: R_RISCV_JAL	.L3
+
+00000028 <.L6>:
+  28:	fe042223          	sw	x0,-28(x8)
+
+0000002c <.LBB5>:
+  2c:	fe042023          	sw	x0,-32(x8)
+  30:	0700006f          	jal	x0,a0 <.L4>
+			30: R_RISCV_JAL	.L4
+
+00000034 <.L5>:
+  34:	fec42703          	lw	x14,-20(x8)
+  38:	00070793          	addi	x15,x14,0
+  3c:	00179793          	slli	x15,x15,0x1
+  40:	00e787b3          	add	x15,x15,x14
+  44:	00279793          	slli	x15,x15,0x2
+  48:	00078713          	addi	x14,x15,0
+  4c:	fdc42783          	lw	x15,-36(x8)
+  50:	00e78733          	add	x14,x15,x14
+  54:	fe042783          	lw	x15,-32(x8)
+  58:	00279793          	slli	x15,x15,0x2
+  5c:	00f707b3          	add	x15,x14,x15
+  60:	0007a703          	lw	x14,0(x15)
+  64:	fe042783          	lw	x15,-32(x8)
+  68:	00379793          	slli	x15,x15,0x3
+  6c:	fd842683          	lw	x13,-40(x8)
+  70:	00f686b3          	add	x13,x13,x15
+  74:	fe842783          	lw	x15,-24(x8)
+  78:	00279793          	slli	x15,x15,0x2
+  7c:	00f687b3          	add	x15,x13,x15
+  80:	0007a783          	lw	x15,0(x15)
+  84:	02f707b3          	mul	x15,x14,x15
+  88:	fe442703          	lw	x14,-28(x8)
+  8c:	00f707b3          	add	x15,x14,x15
+  90:	fef42223          	sw	x15,-28(x8)
+  94:	fe042783          	lw	x15,-32(x8)
+  98:	00178793          	addi	x15,x15,1
+  9c:	fef42023          	sw	x15,-32(x8)
+
+000000a0 <.L4>:
+  a0:	fe042703          	lw	x14,-32(x8)
+  a4:	00200793          	addi	x15,x0,2
+  a8:	f8e7d6e3          	bge	x15,x14,34 <.L5>
+			a8: R_RISCV_BRANCH	.L5
+
+000000ac <.LBE5>:
+  ac:	fec42783          	lw	x15,-20(x8)
+  b0:	00379793          	slli	x15,x15,0x3
+  b4:	fd442703          	lw	x14,-44(x8)
+  b8:	00f70733          	add	x14,x14,x15
+  bc:	fe842783          	lw	x15,-24(x8)
+  c0:	00279793          	slli	x15,x15,0x2
+  c4:	00f707b3          	add	x15,x14,x15
+  c8:	fe442703          	lw	x14,-28(x8)
+  cc:	00e7a023          	sw	x14,0(x15)
+
+000000d0 <.LBE4>:
+  d0:	fe842783          	lw	x15,-24(x8)
+  d4:	00178793          	addi	x15,x15,1
+  d8:	fef42423          	sw	x15,-24(x8)
+
+000000dc <.L3>:
+  dc:	fe842703          	lw	x14,-24(x8)
+  e0:	00100793          	addi	x15,x0,1
+  e4:	f4e7d2e3          	bge	x15,x14,28 <.L6>
+			e4: R_RISCV_BRANCH	.L6
+
+000000e8 <.LBE3>:
+  e8:	fec42783          	lw	x15,-20(x8)
+  ec:	00178793          	addi	x15,x15,1
+  f0:	fef42623          	sw	x15,-20(x8)
+
+000000f4 <.L2>:
+  f4:	fec42703          	lw	x14,-20(x8)
+  f8:	00100793          	addi	x15,x0,1
+  fc:	f2e7d2e3          	bge	x15,x14,20 <.L7>
+			fc: R_RISCV_BRANCH	.L7
+
+00000100 <.LBE2>:
+ 100:	00000013          	addi	x0,x0,0
+ 104:	00000013          	addi	x0,x0,0
+ 108:	02c12403          	lw	x8,44(x2)
+ 10c:	03010113          	addi	x2,x2,48
+ 110:	00008067          	jalr	x0,0(x1)
+
+00000114 <main>:
+ 114:	f9010113          	addi	x2,x2,-112
+ 118:	06112623          	sw	x1,108(x2)
+ 11c:	06812423          	sw	x8,104(x2)
+ 120:	07010413          	addi	x8,x2,112
+ 124:	000007b7          	lui	x15,0x0
+			124: R_RISCV_HI20	.LC0
+			124: R_RISCV_RELAX	*ABS*
+ 128:	00078793          	addi	x15,x15,0 # 0 <matrix_multiply>
+			128: R_RISCV_LO12_I	.LC0
+			128: R_RISCV_RELAX	*ABS*
+ 12c:	0007a503          	lw	x10,0(x15)
+ 130:	0047a583          	lw	x11,4(x15)
+ 134:	0087a603          	lw	x12,8(x15)
+ 138:	00c7a683          	lw	x13,12(x15)
+ 13c:	0107a703          	lw	x14,16(x15)
+ 140:	0147a783          	lw	x15,20(x15)
+ 144:	fca42623          	sw	x10,-52(x8)
+ 148:	fcb42823          	sw	x11,-48(x8)
+ 14c:	fcc42a23          	sw	x12,-44(x8)
+ 150:	fcd42c23          	sw	x13,-40(x8)
+ 154:	fce42e23          	sw	x14,-36(x8)
+ 158:	fef42023          	sw	x15,-32(x8)
+ 15c:	000007b7          	lui	x15,0x0
+			15c: R_RISCV_HI20	.LC1
+			15c: R_RISCV_RELAX	*ABS*
+ 160:	00078793          	addi	x15,x15,0 # 0 <matrix_multiply>
+			160: R_RISCV_LO12_I	.LC1
+			160: R_RISCV_RELAX	*ABS*
+ 164:	0007a503          	lw	x10,0(x15)
+ 168:	0047a583          	lw	x11,4(x15)
+ 16c:	0087a603          	lw	x12,8(x15)
+ 170:	00c7a683          	lw	x13,12(x15)
+ 174:	0107a703          	lw	x14,16(x15)
+ 178:	0147a783          	lw	x15,20(x15)
+ 17c:	faa42a23          	sw	x10,-76(x8)
+ 180:	fab42c23          	sw	x11,-72(x8)
+ 184:	fac42e23          	sw	x12,-68(x8)
+ 188:	fcd42023          	sw	x13,-64(x8)
+ 18c:	fce42223          	sw	x14,-60(x8)
+ 190:	fcf42423          	sw	x15,-56(x8)
+ 194:	000007b7          	lui	x15,0x0
+			194: R_RISCV_HI20	.LC2
+			194: R_RISCV_RELAX	*ABS*
+ 198:	00078793          	addi	x15,x15,0 # 0 <matrix_multiply>
+			198: R_RISCV_LO12_I	.LC2
+			198: R_RISCV_RELAX	*ABS*
+ 19c:	0007a603          	lw	x12,0(x15)
+ 1a0:	0047a683          	lw	x13,4(x15)
+ 1a4:	0087a703          	lw	x14,8(x15)
+ 1a8:	00c7a783          	lw	x15,12(x15)
+ 1ac:	fac42223          	sw	x12,-92(x8)
+ 1b0:	fad42423          	sw	x13,-88(x8)
+ 1b4:	fae42623          	sw	x14,-84(x8)
+ 1b8:	faf42823          	sw	x15,-80(x8)
+ 1bc:	f8042a23          	sw	x0,-108(x8)
+ 1c0:	f8042c23          	sw	x0,-104(x8)
+ 1c4:	f8042e23          	sw	x0,-100(x8)
+ 1c8:	fa042023          	sw	x0,-96(x8)
+ 1cc:	fe042623          	sw	x0,-20(x8)
+ 1d0:	f9440693          	addi	x13,x8,-108
+ 1d4:	fb440713          	addi	x14,x8,-76
+ 1d8:	fcc40793          	addi	x15,x8,-52
+ 1dc:	00068613          	addi	x12,x13,0
+ 1e0:	00070593          	addi	x11,x14,0
+ 1e4:	00078513          	addi	x10,x15,0
+ 1e8:	00000097          	auipc	x1,0x0
+			1e8: R_RISCV_CALL_PLT	matrix_multiply
+			1e8: R_RISCV_RELAX	*ABS*
+ 1ec:	000080e7          	jalr	x1,0(x1) # 1e8 <main+0xd4>
+ 1f0:	000007b7          	lui	x15,0x0
+			1f0: R_RISCV_HI20	.LC3
+			1f0: R_RISCV_RELAX	*ABS*
+ 1f4:	00078513          	addi	x10,x15,0 # 0 <matrix_multiply>
+			1f4: R_RISCV_LO12_I	.LC3
+			1f4: R_RISCV_RELAX	*ABS*
+ 1f8:	00000097          	auipc	x1,0x0
+			1f8: R_RISCV_CALL_PLT	puts
+			1f8: R_RISCV_RELAX	*ABS*
+ 1fc:	000080e7          	jalr	x1,0(x1) # 1f8 <main+0xe4>
+
+00000200 <.LBB6>:
+ 200:	fe042423          	sw	x0,-24(x8)
+ 204:	0d00006f          	jal	x0,2d4 <.L9>
+			204: R_RISCV_JAL	.L9
+
+00000208 <.L15>:
+ 208:	fe042223          	sw	x0,-28(x8)
+ 20c:	0b00006f          	jal	x0,2bc <.L10>
+			20c: R_RISCV_JAL	.L10
+
+00000210 <.L14>:
+ 210:	fe842783          	lw	x15,-24(x8)
+ 214:	00179713          	slli	x14,x15,0x1
+ 218:	fe442783          	lw	x15,-28(x8)
+ 21c:	00f707b3          	add	x15,x14,x15
+ 220:	00279793          	slli	x15,x15,0x2
+ 224:	ff078793          	addi	x15,x15,-16
+ 228:	008787b3          	add	x15,x15,x8
+ 22c:	fa47a683          	lw	x13,-92(x15)
+ 230:	fe442703          	lw	x14,-28(x8)
+ 234:	00100793          	addi	x15,x0,1
+ 238:	00f71663          	bne	x14,x15,244 <.L11>
+			238: R_RISCV_BRANCH	.L11
+ 23c:	00a00793          	addi	x15,x0,10
+ 240:	0080006f          	jal	x0,248 <.L12>
+			240: R_RISCV_JAL	.L12
+
+00000244 <.L11>:
+ 244:	02000793          	addi	x15,x0,32
+
+00000248 <.L12>:
+ 248:	00078613          	addi	x12,x15,0
+ 24c:	00068593          	addi	x11,x13,0
+ 250:	000007b7          	lui	x15,0x0
+			250: R_RISCV_HI20	.LC4
+			250: R_RISCV_RELAX	*ABS*
+ 254:	00078513          	addi	x10,x15,0 # 0 <matrix_multiply>
+			254: R_RISCV_LO12_I	.LC4
+			254: R_RISCV_RELAX	*ABS*
+ 258:	00000097          	auipc	x1,0x0
+			258: R_RISCV_CALL_PLT	printf
+			258: R_RISCV_RELAX	*ABS*
+ 25c:	000080e7          	jalr	x1,0(x1) # 258 <.L12+0x10>
+ 260:	fe842783          	lw	x15,-24(x8)
+ 264:	00179713          	slli	x14,x15,0x1
+ 268:	fe442783          	lw	x15,-28(x8)
+ 26c:	00f707b3          	add	x15,x14,x15
+ 270:	00279793          	slli	x15,x15,0x2
+ 274:	ff078793          	addi	x15,x15,-16
+ 278:	008787b3          	add	x15,x15,x8
+ 27c:	fa47a703          	lw	x14,-92(x15)
+ 280:	fe842783          	lw	x15,-24(x8)
+ 284:	00179693          	slli	x13,x15,0x1
+ 288:	fe442783          	lw	x15,-28(x8)
+ 28c:	00f687b3          	add	x15,x13,x15
+ 290:	00279793          	slli	x15,x15,0x2
+ 294:	ff078793          	addi	x15,x15,-16
+ 298:	008787b3          	add	x15,x15,x8
+ 29c:	fb47a783          	lw	x15,-76(x15)
+ 2a0:	00f70863          	beq	x14,x15,2b0 <.L13>
+			2a0: R_RISCV_BRANCH	.L13
+ 2a4:	fec42783          	lw	x15,-20(x8)
+ 2a8:	00178793          	addi	x15,x15,1
+ 2ac:	fef42623          	sw	x15,-20(x8)
+
+000002b0 <.L13>:
+ 2b0:	fe442783          	lw	x15,-28(x8)
+ 2b4:	00178793          	addi	x15,x15,1
+ 2b8:	fef42223          	sw	x15,-28(x8)
+
+000002bc <.L10>:
+ 2bc:	fe442703          	lw	x14,-28(x8)
+ 2c0:	00100793          	addi	x15,x0,1
+ 2c4:	f4e7d6e3          	bge	x15,x14,210 <.L14>
+			2c4: R_RISCV_BRANCH	.L14
+
+000002c8 <.LBE7>:
+ 2c8:	fe842783          	lw	x15,-24(x8)
+ 2cc:	00178793          	addi	x15,x15,1
+ 2d0:	fef42423          	sw	x15,-24(x8)
+
+000002d4 <.L9>:
+ 2d4:	fe842703          	lw	x14,-24(x8)
+ 2d8:	00100793          	addi	x15,x0,1
+ 2dc:	f2e7d6e3          	bge	x15,x14,208 <.L15>
+			2dc: R_RISCV_BRANCH	.L15
+
+000002e0 <.LBE6>:
+ 2e0:	fec42783          	lw	x15,-20(x8)
+ 2e4:	00078863          	beq	x15,x0,2f4 <.L16>
+			2e4: R_RISCV_BRANCH	.L16
+ 2e8:	000007b7          	lui	x15,0x0
+			2e8: R_RISCV_HI20	.LC5
+			2e8: R_RISCV_RELAX	*ABS*
+ 2ec:	00078793          	addi	x15,x15,0 # 0 <matrix_multiply>
+			2ec: R_RISCV_LO12_I	.LC5
+			2ec: R_RISCV_RELAX	*ABS*
+ 2f0:	00c0006f          	jal	x0,2fc <.L17>
+			2f0: R_RISCV_JAL	.L17
+
+000002f4 <.L16>:
+ 2f4:	000007b7          	lui	x15,0x0
+			2f4: R_RISCV_HI20	.LC6
+			2f4: R_RISCV_RELAX	*ABS*
+ 2f8:	00078793          	addi	x15,x15,0 # 0 <matrix_multiply>
+			2f8: R_RISCV_LO12_I	.LC6
+			2f8: R_RISCV_RELAX	*ABS*
+
+000002fc <.L17>:
+ 2fc:	00078513          	addi	x10,x15,0
+ 300:	00000097          	auipc	x1,0x0
+			300: R_RISCV_CALL_PLT	puts
+			300: R_RISCV_RELAX	*ABS*
+ 304:	000080e7          	jalr	x1,0(x1) # 300 <.L17+0x4>
+ 308:	fec42783          	lw	x15,-20(x8)
+ 30c:	00f037b3          	sltu	x15,x0,x15
+ 310:	0ff7f793          	andi	x15,x15,255
+ 314:	00078513          	addi	x10,x15,0
+ 318:	06c12083          	lw	x1,108(x2)
+ 31c:	06812403          	lw	x8,104(x2)
+ 320:	07010113          	addi	x2,x2,112
+ 324:	00008067          	jalr	x0,0(x1)

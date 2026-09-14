@@ -1,0 +1,61 @@
+
+Week2/task3-riscv-analysis/build/O2/matrix.o:     file format elf32-littleriscv
+
+
+Disassembly of section .text:
+
+00000000 <matrix_multiply>:
+   0:	01850e13          	addi	x28,x10,24
+
+00000004 <.L2>:
+   4:	00052703          	lw	x14,0(x10)
+   8:	00452683          	lw	x13,4(x10)
+   c:	0005a303          	lw	x6,0(x11)
+  10:	0085a883          	lw	x17,8(x11)
+  14:	00852783          	lw	x15,8(x10)
+  18:	0105a803          	lw	x16,16(x11)
+  1c:	031686b3          	mul	x13,x13,x17
+
+00000020 <.LBE3>:
+  20:	00860613          	addi	x12,x12,8
+  24:	00c50513          	addi	x10,x10,12
+
+00000028 <.LBB10>:
+  28:	02670733          	mul	x14,x14,x6
+
+0000002c <.LVL3>:
+  2c:	030787b3          	mul	x15,x15,x16
+  30:	00d70733          	add	x14,x14,x13
+
+00000034 <.LBB7>:
+  34:	00e787b3          	add	x15,x15,x14
+
+00000038 <.LBE7>:
+  38:	fef62c23          	sw	x15,-8(x12)
+
+0000003c <.LBB11>:
+  3c:	ff452303          	lw	x6,-12(x10)
+  40:	ff852683          	lw	x13,-8(x10)
+  44:	0045a703          	lw	x14,4(x11)
+  48:	00c5a883          	lw	x17,12(x11)
+  4c:	ffc52783          	lw	x15,-4(x10)
+  50:	0145a803          	lw	x16,20(x11)
+  54:	02670733          	mul	x14,x14,x6
+  58:	031686b3          	mul	x13,x13,x17
+  5c:	030787b3          	mul	x15,x15,x16
+  60:	00d70733          	add	x14,x14,x13
+
+00000064 <.LBB9>:
+  64:	00e787b3          	add	x15,x15,x14
+
+00000068 <.LBE9>:
+  68:	fef62e23          	sw	x15,-4(x12)
+
+0000006c <.LBE11>:
+  6c:	f8ae1ce3          	bne	x28,x10,4 <.L2>
+			6c: R_RISCV_BRANCH	.L2
+
+00000070 <.LBE2>:
+  70:	00008067          	jalr	x0,0(x1)
+
+Disassembly of section .text.startup:

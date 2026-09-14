@@ -1,0 +1,4 @@
+program,O0_static,O2_static,reduction,O0_lw_sw,O2_lw_sw,runtime
+counter,31,26,16.1%,7/7,4/4,MATCH-status-0
+alu,49,25,49.0%,15/10,1/0,MATCH-status-0
+matrix,69,29,58.0%,20/13,12/2,MATCH-status-0

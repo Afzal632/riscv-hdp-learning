@@ -1,0 +1,6 @@
+ADD: A=9 B=8 result=1 signed=1 PASS
+SUB: A=3 B=5 result=14 signed=-2 PASS
+AND: A=12 B=10 result=8 signed=-8 PASS
+OR: A=12 B=3 result=15 signed=-1 PASS
+XOR: A=12 B=10 result=6 signed=6 PASS
+ALU TEST PASSED

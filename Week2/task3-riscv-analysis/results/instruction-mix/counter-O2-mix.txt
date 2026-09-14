@@ -1,0 +1,10 @@
+     10 addi
+      4 sw
+      4 lw
+      2 jalr
+      1 sub
+      1 sltu
+      1 lui
+      1 bne
+      1 auipc
+      1 and

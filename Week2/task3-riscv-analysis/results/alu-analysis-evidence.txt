@@ -1,0 +1,205 @@
+===== ALU SOURCE =====
+     1	#include <stdio.h>
+     2	
+     3	enum {
+     4	    ALU_ADD = 0,
+     5	    ALU_SUB,
+     6	    ALU_AND,
+     7	    ALU_OR,
+     8	    ALU_XOR
+     9	};
+    10	
+    11	__attribute__((noinline, noclone))
+    12	unsigned int alu4(unsigned int a, unsigned int b, unsigned int operation)
+    13	{
+    14	    unsigned int result;
+    15	
+    16	    switch (operation) {
+    17	    case ALU_ADD: result = a + b; break;
+    18	    case ALU_SUB: result = a - b; break;
+    19	    case ALU_AND: result = a & b; break;
+    20	    case ALU_OR:  result = a | b; break;
+    21	    case ALU_XOR: result = a ^ b; break;
+    22	    default:      result = 0;     break;
+    23	    }
+    24	
+    25	    return result & 0xFU;
+    26	}
+    27	
+    28	int signed4(unsigned int value)
+    29	{
+    30	    value &= 0xFU;
+    31	    return (value & 0x8U) ? (int)value - 16 : (int)value;
+    32	}
+    33	
+    34	int main(void)
+    35	{
+    36	    static const struct {
+    37	        unsigned int a, b, operation, expected;
+    38	        const char *name;
+    39	    } tests[] = {
+    40	        { 9,  8, ALU_ADD,  1, "ADD" },
+    41	        { 3,  5, ALU_SUB, 14, "SUB" },
+    42	        {12, 10, ALU_AND,  8, "AND" },
+    43	        {12,  3, ALU_OR,  15, "OR"  },
+    44	        {12, 10, ALU_XOR,  6, "XOR" }
+    45	    };
+    46	
+    47	    unsigned int failures = 0;
+    48	
+    49	    for (unsigned int i = 0; i < sizeof(tests) / sizeof(tests[0]); i++) {
+    50	        unsigned int result =
+    51	            alu4(tests[i].a, tests[i].b, tests[i].operation);
+    52	        int passed = result == tests[i].expected;
+    53	
+    54	        printf("%s: A=%u B=%u result=%u signed=%d %s\n",
+    55	               tests[i].name, tests[i].a, tests[i].b,
+    56	               result, signed4(result), passed ? "PASS" : "FAIL");
+    57	
+    58	        if (!passed)
+    59	            failures++;
+    60	    }
+    61	
+    62	    printf("%s\n", failures ? "ALU TEST FAILED" : "ALU TEST PASSED");
+    63	    return failures ? 1 : 0;
+    64	}
+
+===== STATIC INSTRUCTION COUNTS =====
+program,optimization,function,static_instructions
+alu,O0,alu4,49
+alu,O2,alu4,25
+
+===== ALU O0 COMPLETE alu4 FUNCTION =====
+00000000 <alu4>:
+   0:	fd010113          	addi	x2,x2,-48
+   4:	02812623          	sw	x8,44(x2)
+   8:	03010413          	addi	x8,x2,48
+   c:	fca42e23          	sw	x10,-36(x8)
+  10:	fcb42c23          	sw	x11,-40(x8)
+  14:	fcc42a23          	sw	x12,-44(x8)
+  18:	fd442703          	lw	x14,-44(x8)
+  1c:	00400793          	addi	x15,x0,4
+  20:	08e7e263          	bltu	x15,x14,a4 <.L2>
+			20: R_RISCV_BRANCH	.L2
+  24:	fd442783          	lw	x15,-44(x8)
+  28:	00279713          	slli	x14,x15,0x2
+  2c:	000007b7          	lui	x15,0x0
+			2c: R_RISCV_HI20	.L4
+			2c: R_RISCV_RELAX	*ABS*
+  30:	00078793          	addi	x15,x15,0 # 0 <alu4>
+			30: R_RISCV_LO12_I	.L4
+			30: R_RISCV_RELAX	*ABS*
+  34:	00f707b3          	add	x15,x14,x15
+  38:	0007a783          	lw	x15,0(x15)
+  3c:	00078067          	jalr	x0,0(x15)
+  40:	fdc42703          	lw	x14,-36(x8)
+  44:	fd842783          	lw	x15,-40(x8)
+  48:	00f707b3          	add	x15,x14,x15
+  4c:	fef42623          	sw	x15,-20(x8)
+  50:	05c0006f          	jal	x0,ac <.L9>
+			50: R_RISCV_JAL	.L9
+  54:	fdc42703          	lw	x14,-36(x8)
+  58:	fd842783          	lw	x15,-40(x8)
+  5c:	40f707b3          	sub	x15,x14,x15
+  60:	fef42623          	sw	x15,-20(x8)
+  64:	0480006f          	jal	x0,ac <.L9>
+			64: R_RISCV_JAL	.L9
+  68:	fdc42703          	lw	x14,-36(x8)
+  6c:	fd842783          	lw	x15,-40(x8)
+  70:	00f777b3          	and	x15,x14,x15
+  74:	fef42623          	sw	x15,-20(x8)
+  78:	0340006f          	jal	x0,ac <.L9>
+			78: R_RISCV_JAL	.L9
+  7c:	fdc42703          	lw	x14,-36(x8)
+  80:	fd842783          	lw	x15,-40(x8)
+  84:	00f767b3          	or	x15,x14,x15
+  88:	fef42623          	sw	x15,-20(x8)
+  8c:	0200006f          	jal	x0,ac <.L9>
+			8c: R_RISCV_JAL	.L9
+  90:	fdc42703          	lw	x14,-36(x8)
+  94:	fd842783          	lw	x15,-40(x8)
+  98:	00f747b3          	xor	x15,x14,x15
+  9c:	fef42623          	sw	x15,-20(x8)
+  a0:	00c0006f          	jal	x0,ac <.L9>
+			a0: R_RISCV_JAL	.L9
+  a4:	fe042623          	sw	x0,-20(x8)
+  a8:	00000013          	addi	x0,x0,0
+  ac:	fec42783          	lw	x15,-20(x8)
+  b0:	00f7f793          	andi	x15,x15,15
+  b4:	00078513          	addi	x10,x15,0
+  b8:	02c12403          	lw	x8,44(x2)
+  bc:	03010113          	addi	x2,x2,48
+  c0:	00008067          	jalr	x0,0(x1)
+
+===== ALU O0 INSTRUCTION MIX =====
+     15 lw
+     10 sw
+      7 addi
+      5 jal
+      2 jalr
+      2 add
+      1 xor
+      1 sub
+      1 slli
+      1 or
+      1 lui
+      1 bltu
+      1 andi
+      1 and
+
+===== ALU O2 COMPLETE alu4 FUNCTION =====
+00000000 <alu4>:
+   0:	00400793          	addi	x15,x0,4
+   4:	04c7ec63          	bltu	x15,x12,5c <.L9>
+			4: R_RISCV_BRANCH	.L9
+   8:	000007b7          	lui	x15,0x0
+			8: R_RISCV_HI20	.L4
+			8: R_RISCV_RELAX	*ABS*
+   c:	00078793          	addi	x15,x15,0 # 0 <alu4>
+			c: R_RISCV_LO12_I	.L4
+			c: R_RISCV_RELAX	*ABS*
+  10:	00261613          	slli	x12,x12,0x2
+  14:	00f60633          	add	x12,x12,x15
+  18:	00062783          	lw	x15,0(x12)
+  1c:	00078067          	jalr	x0,0(x15)
+  20:	00b56533          	or	x10,x10,x11
+  24:	00f57513          	andi	x10,x10,15
+  28:	00008067          	jalr	x0,0(x1)
+  2c:	00b54533          	xor	x10,x10,x11
+  30:	00f57513          	andi	x10,x10,15
+  34:	00008067          	jalr	x0,0(x1)
+  38:	00b50533          	add	x10,x10,x11
+  3c:	00f57513          	andi	x10,x10,15
+  40:	00008067          	jalr	x0,0(x1)
+  44:	40b50533          	sub	x10,x10,x11
+  48:	00f57513          	andi	x10,x10,15
+  4c:	00008067          	jalr	x0,0(x1)
+  50:	00b57533          	and	x10,x10,x11
+  54:	00f57513          	andi	x10,x10,15
+  58:	00008067          	jalr	x0,0(x1)
+  5c:	00000513          	addi	x10,x0,0
+  60:	00008067          	jalr	x0,0(x1)
+
+===== ALU O2 INSTRUCTION MIX =====
+      7 jalr
+      5 andi
+      3 addi
+      2 add
+      1 xor
+      1 sub
+      1 slli
+      1 or
+      1 lw
+      1 lui
+      1 bltu
+      1 and
+
+===== RUNTIME COMPARISON =====
+alu: O0 and O2 outputs MATCH
+
+ADD: A=9 B=8 result=1 signed=1 PASS
+SUB: A=3 B=5 result=14 signed=-2 PASS
+AND: A=12 B=10 result=8 signed=-8 PASS
+OR: A=12 B=3 result=15 signed=-1 PASS
+XOR: A=12 B=10 result=6 signed=6 PASS
+ALU TEST PASSED

@@ -1,0 +1,3 @@
+riscv64-unknown-elf-objdump: 'Week2/task3-riscv-analysis/build/runtime/counter-O0.elf': No such file
+riscv64-unknown-elf-size: 'Week2/task3-riscv-analysis/build/runtime/counter-O0.elf': No such file
+readelf: Error: 'Week2/task3-riscv-analysis/build/runtime/counter-O0.elf': No such file

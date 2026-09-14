@@ -1,0 +1,180 @@
+
+===== Week1/alu-task2/c/alu.c =====
+     1	#include <stdio.h>
+     2	
+     3	enum {
+     4	    ALU_ADD = 0,
+     5	    ALU_SUB = 1,
+     6	    ALU_AND = 2,
+     7	    ALU_OR  = 3,
+     8	    ALU_XOR = 4
+     9	};
+    10	
+    11	unsigned int alu4(unsigned int a, unsigned int b, unsigned int operation)
+    12	{
+    13	    unsigned int result;
+    14	
+    15	    switch (operation) {
+    16	    case ALU_ADD:
+    17	        result = a + b;
+    18	        break;
+    19	
+    20	    case ALU_SUB:
+    21	        result = a - b;
+    22	        break;
+    23	
+    24	    case ALU_AND:
+    25	        result = a & b;
+    26	        break;
+    27	
+    28	    case ALU_OR:
+    29	        result = a | b;
+    30	        break;
+    31	
+    32	    case ALU_XOR:
+    33	        result = a ^ b;
+    34	        break;
+    35	
+    36	    default:
+    37	        result = 0;
+    38	        break;
+    39	    }
+    40	
+    41	    return result & 0xF;
+    42	}
+    43	
+    44	int signed4(unsigned int value)
+    45	{
+    46	    value &= 0xF;
+    47	
+    48	    if (value & 0x8)
+    49	        return (int)value - 16;
+    50	
+    51	    return (int)value;
+    52	}
+    53	
+    54	void print_binary4(unsigned int value)
+    55	{
+    56	    int bit;
+    57	
+    58	    for (bit = 3; bit >= 0; bit--)
+    59	        putchar((value & (1U << bit)) ? '1' : '0');
+    60	}
+    61	
+    62	int main(void)
+    63	{
+    64	    unsigned int a;
+    65	    unsigned int b;
+    66	    unsigned int operation;
+    67	    unsigned int result;
+    68	
+    69	    printf("4-bit ALU operations:\n");
+    70	    printf("0 = ADD\n");
+    71	    printf("1 = SUBTRACT\n");
+    72	    printf("2 = AND\n");
+    73	    printf("3 = OR\n");
+    74	    printf("4 = XOR\n");
+    75	    printf("Enter A B operation: ");
+    76	
+    77	    if (scanf("%u %u %u", &a, &b, &operation) != 3) {
+    78	        printf("Invalid input\n");
+    79	        return 1;
+    80	    }
+    81	
+    82	    if (a > 15 || b > 15) {
+    83	        printf("A and B must be between 0 and 15\n");
+    84	        return 1;
+    85	    }
+    86	
+    87	    if (operation > ALU_XOR) {
+    88	        printf("Operation must be between 0 and 4\n");
+    89	        return 1;
+    90	    }
+    91	
+    92	    result = alu4(a, b, operation);
+    93	
+    94	    printf("A       = %2u = ", a);
+    95	    print_binary4(a);
+    96	
+    97	    printf("\nB       = %2u = ", b);
+    98	    print_binary4(b);
+    99	
+   100	    printf("\nResult  = %2u = ", result);
+   101	    print_binary4(result);
+   102	
+   103	    printf("\nSigned result = %d\n", signed4(result));
+   104	
+   105	    return 0;
+   106	}
+
+===== Week1/counter-isa-comparison/code/count_baseline.c =====
+     1	#include <stdio.h>
+     2	#include <time.h>
+     3	
+     4	void delay(int n)
+     5	{
+     6	    int us = n;
+     7	    clock_t start_time = clock();
+     8	
+     9	    while (clock() <
+    10	           start_time + (us * CLOCKS_PER_SEC / 1000000));
+    11	}
+    12	
+    13	void display(int count)
+    14	{
+    15	    printf("Count value is: %d\n", count);
+    16	}
+    17	
+    18	int main(void)
+    19	{
+    20	    int count = 0x00000000;
+    21	
+    22	    while (1)
+    23	    {
+    24	        display(count);
+    25	        count++;
+    26	
+    27	        if (count == 16)
+    28	        {
+    29	            count = 0;
+    30	        }
+    31	
+    32	        delay(500000);
+    33	    }
+    34	}
+
+===== Week1/counter-isa-comparison/code/count_modified.c =====
+     1	#include <stdio.h>
+     2	#include <time.h>
+     3	
+     4	void delay(int n)
+     5	{
+     6	    int us = n;
+     7	    clock_t start_time = clock();
+     8	
+     9	    while (clock() <
+    10	           start_time + (us * CLOCKS_PER_SEC / 1000000));
+    11	}
+    12	
+    13	void display(int count)
+    14	{
+    15	    printf("Count value is: %d\n", count);
+    16	}
+    17	
+    18	int main(void)
+    19	{
+    20	    int count = 15;
+    21	
+    22	    while (1)
+    23	    {
+    24	        display(count);
+    25	        count--;
+    26	
+    27	        if (count == -1)
+    28	        {
+    29	            count = 15;
+    30	        }
+    31	
+    32	        delay(500000);
+    33	    }
+    34	}

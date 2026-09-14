@@ -1,0 +1,8 @@
+picolibc-riscv64-unknown-elf:
+  Installed: (none)
+  Candidate: 1.8.6-2
+  Version table:
+     1.8.6-2 500
+        500 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/sdd       1007G  4.6G  952G   1% /

@@ -1,0 +1,93 @@
+/mnt/d/Learning/riscv-hdp
+Command 'riscv64-unknown-elf-gcc' not found, but can be installed with:
+sudo apt install gcc-riscv64-unknown-elf
+Command 'riscv64-unknown-elf-gcc' not found, but can be installed with:
+sudo apt install gcc-riscv64-unknown-elf
+Command 'riscv64-unknown-elf-objdump' not found, but can be installed with:
+sudo apt install binutils-riscv64-unknown-elf
+Command 'spike' not found, did you mean:
+  command 'spine' from deb cacti-spine (1.2.25-1)
+  command 'spipe' from deb spiped (1.6.2-3)
+Try: sudo apt install <deb name>
+Icarus Verilog version 12.0 (stable) ()
+
+Copyright (c) 2000-2021 Stephen Williams (steve@icarus.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+Icarus Verilog Preprocessor version 12.0 (stable) ()
+
+Copyright (c) 1999-2021 Stephen Williams (steve@icarus.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+Icarus Verilog Parser/Elaborator version 12.0 (stable) ()
+
+Copyright (c) 1998-2021 Stephen Williams (steve@icarus.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+ FLAGS DLL vvp.tgt
+vvp.tgt: Icarus Verilog VVP Code Generator 12.0 (stable) ()
+
+Copyright (c) 2001-2021 Stephen Williams (steve@icarus.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License along
+  with this program; if not, write to the Free Software Foundation, Inc.,
+  51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+
+Yosys 0.33 (git sha1 2584903a060)
+
+The command 'docker' could not be found in this WSL 2 distro.
+We recommend to activate the WSL integration in Docker Desktop settings.
+
+For details about using Docker Desktop with WSL 2, visit:
+
+https://docs.docker.com/go/wsl2/
+

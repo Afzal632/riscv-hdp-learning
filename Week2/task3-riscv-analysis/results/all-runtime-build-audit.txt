@@ -1,0 +1,35 @@
+Linked Week2/task3-riscv-analysis/build/runtime/counter-O0.elf
+Linked Week2/task3-riscv-analysis/build/runtime/alu-O0.elf
+Linked Week2/task3-riscv-analysis/build/runtime/matrix-O0.elf
+Linked Week2/task3-riscv-analysis/build/runtime/counter-O2.elf
+Linked Week2/task3-riscv-analysis/build/runtime/alu-O2.elf
+Linked Week2/task3-riscv-analysis/build/runtime/matrix-O2.elf
+
+Executable formats:
+Week2/task3-riscv-analysis/build/runtime/alu-O0.elf:     file format elf32-littleriscv
+architecture: riscv:rv32, flags 0x00000112:
+start address 0x00010094
+Week2/task3-riscv-analysis/build/runtime/alu-O2.elf:     file format elf32-littleriscv
+architecture: riscv:rv32, flags 0x00000112:
+start address 0x0001019c
+Week2/task3-riscv-analysis/build/runtime/counter-O0.elf:     file format elf32-littleriscv
+architecture: riscv:rv32, flags 0x00000112:
+start address 0x00010094
+Week2/task3-riscv-analysis/build/runtime/counter-O2.elf:     file format elf32-littleriscv
+architecture: riscv:rv32, flags 0x00000112:
+start address 0x000100f8
+Week2/task3-riscv-analysis/build/runtime/matrix-O0.elf:     file format elf32-littleriscv
+architecture: riscv:rv32, flags 0x00000112:
+start address 0x00010094
+Week2/task3-riscv-analysis/build/runtime/matrix-O2.elf:     file format elf32-littleriscv
+architecture: riscv:rv32, flags 0x00000112:
+start address 0x0001021c
+
+Executable sizes:
+   text	   data	    bss	    dec	    hex	filename
+  12992	     20	      0	  13012	   32d4	Week2/task3-riscv-analysis/build/runtime/alu-O0.elf
+  12584	     20	      0	  12604	   313c	Week2/task3-riscv-analysis/build/runtime/alu-O2.elf
+  12020	     20	      0	  12040	   2f08	Week2/task3-riscv-analysis/build/runtime/counter-O0.elf
+  12000	     20	      0	  12020	   2ef4	Week2/task3-riscv-analysis/build/runtime/counter-O2.elf
+  12888	     20	      0	  12908	   326c	Week2/task3-riscv-analysis/build/runtime/matrix-O0.elf
+  12588	     20	      0	  12608	   3140	Week2/task3-riscv-analysis/build/runtime/matrix-O2.elf

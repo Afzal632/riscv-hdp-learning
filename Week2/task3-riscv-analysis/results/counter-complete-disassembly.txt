@@ -1,0 +1,79 @@
+===== COUNTER O0 COMPLETE MAIN =====
+00000000 <main>:
+   0:	fe010113          	addi	x2,x2,-32
+   4:	00112e23          	sw	x1,28(x2)
+   8:	00812c23          	sw	x8,24(x2)
+   c:	02010413          	addi	x8,x2,32
+  10:	fe042623          	sw	x0,-20(x8)
+  14:	fe042423          	sw	x0,-24(x8)
+  18:	0400006f          	jal	x0,58 <.L2>
+			18: R_RISCV_JAL	.L2
+  1c:	fec42583          	lw	x11,-20(x8)
+  20:	000007b7          	lui	x15,0x0
+			20: R_RISCV_HI20	.LC0
+			20: R_RISCV_RELAX	*ABS*
+  24:	00078513          	addi	x10,x15,0 # 0 <main>
+			24: R_RISCV_LO12_I	.LC0
+			24: R_RISCV_RELAX	*ABS*
+  28:	00000097          	auipc	x1,0x0
+			28: R_RISCV_CALL_PLT	printf
+			28: R_RISCV_RELAX	*ABS*
+  2c:	000080e7          	jalr	x1,0(x1) # 28 <.L4+0xc>
+  30:	fec42783          	lw	x15,-20(x8)
+  34:	00178793          	addi	x15,x15,1
+  38:	fef42623          	sw	x15,-20(x8)
+  3c:	fec42703          	lw	x14,-20(x8)
+  40:	01000793          	addi	x15,x0,16
+  44:	00f71463          	bne	x14,x15,4c <.L3>
+			44: R_RISCV_BRANCH	.L3
+  48:	fe042623          	sw	x0,-20(x8)
+  4c:	fe842783          	lw	x15,-24(x8)
+  50:	00178793          	addi	x15,x15,1
+  54:	fef42423          	sw	x15,-24(x8)
+  58:	fe842703          	lw	x14,-24(x8)
+  5c:	01100793          	addi	x15,x0,17
+  60:	fae7fee3          	bgeu	x15,x14,1c <.L4>
+			60: R_RISCV_BRANCH	.L4
+  64:	00000793          	addi	x15,x0,0
+  68:	00078513          	addi	x10,x15,0
+  6c:	01c12083          	lw	x1,28(x2)
+  70:	01812403          	lw	x8,24(x2)
+  74:	02010113          	addi	x2,x2,32
+  78:	00008067          	jalr	x0,0(x1)
+
+===== COUNTER O2 COMPLETE MAIN =====
+00000000 <main>:
+   0:	ff010113          	addi	x2,x2,-16
+   4:	00812423          	sw	x8,8(x2)
+   8:	00912223          	sw	x9,4(x2)
+   c:	01212023          	sw	x18,0(x2)
+  10:	00112623          	sw	x1,12(x2)
+  14:	01200493          	addi	x9,x0,18
+  18:	00000413          	addi	x8,x0,0
+  1c:	00000937          	lui	x18,0x0
+			1c: R_RISCV_HI20	.LC0
+			1c: R_RISCV_RELAX	*ABS*
+  20:	00040593          	addi	x11,x8,0
+  24:	00090513          	addi	x10,x18,0 # 0 <main>
+			24: R_RISCV_LO12_I	.LC0
+			24: R_RISCV_RELAX	*ABS*
+  28:	00000097          	auipc	x1,0x0
+			28: R_RISCV_CALL_PLT	printf
+			28: R_RISCV_RELAX	*ABS*
+  2c:	000080e7          	jalr	x1,0(x1) # 28 <.L3+0x8>
+  30:	ff140793          	addi	x15,x8,-15
+  34:	00f037b3          	sltu	x15,x0,x15
+  38:	00140413          	addi	x8,x8,1
+  3c:	40f007b3          	sub	x15,x0,x15
+  40:	fff48493          	addi	x9,x9,-1
+  44:	00f47433          	and	x8,x8,x15
+  48:	fc049ce3          	bne	x9,x0,20 <.L3>
+			48: R_RISCV_BRANCH	.L3
+  4c:	00c12083          	lw	x1,12(x2)
+  50:	00812403          	lw	x8,8(x2)
+  54:	00412483          	lw	x9,4(x2)
+  58:	00012903          	lw	x18,0(x2)
+  5c:	00000513          	addi	x10,x0,0
+  60:	01010113          	addi	x2,x2,16
+  64:	00008067          	jalr	x0,0(x1)
+

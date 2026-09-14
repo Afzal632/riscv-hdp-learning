@@ -1,0 +1,63 @@
+===== REPOSITORY ROOT =====
+/mnt/d/Learning/riscv-hdp
+
+===== WEEK 2 GIT STATUS =====
+?? Week2/
+
+===== TASK 3 TOTAL SIZE =====
+2.8M	Week2/task3-riscv-analysis
+
+===== DIRECTORY SIZES =====
+12K	Week2/task3-riscv-analysis/src
+560K	Week2/task3-riscv-analysis/build
+1.2M	Week2/task3-riscv-analysis/results
+1012K	Week2/task3-riscv-analysis/screenshots
+
+===== 25 LARGEST TASK 3 FILES =====
+865K Week2/task3-riscv-analysis/results/spike-build.log
+88K Week2/task3-riscv-analysis/screenshots/T3-09-matrix-O0-O2-disassembly.png
+85K Week2/task3-riscv-analysis/screenshots/T3-10-matrix-analysis.png
+84K Week2/task3-riscv-analysis/screenshots/T3-14-alu-analysis.png
+82K Week2/task3-riscv-analysis/screenshots/T3-06-counter-analysis.png
+80K Week2/task3-riscv-analysis/build/runtime/alu-O2.elf
+80K Week2/task3-riscv-analysis/build/runtime/matrix-O2.elf
+80K Week2/task3-riscv-analysis/build/runtime/alu-O0.elf
+79K Week2/task3-riscv-analysis/build/runtime/matrix-O0.elf
+78K Week2/task3-riscv-analysis/screenshots/T3-07-matrix-source.png
+77K Week2/task3-riscv-analysis/build/runtime/counter-O2.elf
+77K Week2/task3-riscv-analysis/screenshots/T3-13-alu-O0-O2-disassembly.png
+76K Week2/task3-riscv-analysis/build/runtime/counter-O0.elf
+73K Week2/task3-riscv-analysis/screenshots/T3-05-counter-O2-disassembly.png
+72K Week2/task3-riscv-analysis/screenshots/T3-03-counter-spike-output.png
+70K Week2/task3-riscv-analysis/screenshots/T3-04-counter-O0-disassembly.png
+68K Week2/task3-riscv-analysis/results/pk-build-newlib-cc.log
+68K Week2/task3-riscv-analysis/screenshots/T3-11-alu-source.png
+50K Week2/task3-riscv-analysis/screenshots/T3-12-alu-spike-output.png
+44K Week2/task3-riscv-analysis/screenshots/T3-01-toolchain-audit.png
+43K Week2/task3-riscv-analysis/screenshots/T3-15-final-comparison.png
+38K Week2/task3-riscv-analysis/screenshots/T3-08-matrix-spike-output.png
+38K Week2/task3-riscv-analysis/screenshots/T3-02-counter-source.png
+37K Week2/task3-riscv-analysis/results/spike-recovery-audit.txt
+18K Week2/task3-riscv-analysis/build/O2/alu.o
+
+===== GENERATED BUILD FILES =====
+O0/alu.o
+O0/counter.o
+O0/matrix.o
+O2/alu.o
+O2/counter.o
+O2/matrix.o
+runtime/alu-O0.elf
+runtime/alu-O2.elf
+runtime/counter-O0.elf
+runtime/counter-O2.elf
+runtime/matrix-O0.elf
+runtime/matrix-O2.elf
+runtime/pk_start.o
+runtime/pk_stdio.o
+
+===== RESULT FILE COUNT =====
+76
+
+===== EXISTING GITIGNORE FILES =====
+./.gitignore

@@ -1,0 +1,96 @@
+Relevant compiler and linker errors:
+100:riscv64-unknown-elf-gcc: error: unrecognized command-line option '-V'
+101:riscv64-unknown-elf-gcc: fatal error: no input files
+105:riscv64-unknown-elf-gcc: error: unrecognized command-line option '-qversion'; did you mean '--version'?
+106:riscv64-unknown-elf-gcc: fatal error: no input files
+110:riscv64-unknown-elf-gcc: error: unrecognized command-line option '-version'
+111:riscv64-unknown-elf-gcc: fatal error: no input files
+115:configure:3248: riscv64-unknown-elf-gcc    conftest.c  >&5
+116:/usr/lib/gcc/riscv64-unknown-elf/13.2.0/../../../riscv64-unknown-elf/bin/ld: cannot find crt0.o: No such file or directory
+117:/usr/lib/gcc/riscv64-unknown-elf/13.2.0/../../../riscv64-unknown-elf/bin/ld: cannot find -lc: No such file or directory
+118:/usr/lib/gcc/riscv64-unknown-elf/13.2.0/../../../riscv64-unknown-elf/bin/ld: cannot find -lgloss: No such file or directory
+119:collect2: error: ld returned 1 exit status
+139:configure:3297: error: in `/home/afzal/riscv-tools-build/riscv-pk-rv32':
+140:configure:3299: error: C compiler cannot create executables
+
+Final part of config.log:
+GREP=''
+INSTALL_DATA=''
+INSTALL_PROGRAM=''
+INSTALL_SCRIPT=''
+LDFLAGS=''
+LIBOBJS=''
+LIBS=''
+LTLIBOBJS=''
+MEM_START=''
+OBJCOPY=''
+OBJEXT=''
+PACKAGE_BUGREPORT='Andrew Waterman'
+PACKAGE_NAME='RISC-V Proxy Kernel'
+PACKAGE_STRING='RISC-V Proxy Kernel 1.0.0'
+PACKAGE_TARNAME='riscv-pk'
+PACKAGE_URL=''
+PACKAGE_VERSION='1.0.0'
+PATH_SEPARATOR=':'
+RANLIB=''
+READELF=''
+RISCV=''
+SHELL='/bin/bash'
+STOW_PREFIX=''
+STOW_ROOT=''
+WITH_ABI=''
+WITH_ARCH=''
+ac_ct_CC=''
+ac_ct_CXX=''
+bindir='${exec_prefix}/bin'
+build='x86_64-pc-linux-gnu'
+build_alias=''
+build_cpu='x86_64'
+build_os='linux-gnu'
+build_vendor='pc'
+datadir='${datarootdir}'
+datarootdir='${prefix}/share'
+docdir='${datarootdir}/doc/${PACKAGE_TARNAME}'
+dvidir='${docdir}'
+enable_stow=''
+exec_prefix='NONE'
+host='riscv64-unknown-elf'
+host_alias='riscv64-unknown-elf'
+host_cpu='riscv64'
+host_os='elf'
+host_vendor='unknown'
+htmldir='${docdir}'
+includedir='${prefix}/include'
+infodir='${datarootdir}/info'
+libdir='${exec_prefix}/lib'
+libexecdir='${exec_prefix}/libexec'
+localedir='${datarootdir}/locale'
+localstatedir='${prefix}/var'
+mandir='${datarootdir}/man'
+oldincludedir='/usr/include'
+pdfdir='${docdir}'
+prefix='/usr/local'
+program_transform_name='s,x,x,'
+psdir='${docdir}'
+runstatedir='${localstatedir}/run'
+sbindir='${exec_prefix}/sbin'
+sharedstatedir='${prefix}/com'
+stow=''
+subprojects=''
+subprojects_enabled=''
+sysconfdir='${prefix}/etc'
+target_alias=''
+
+## ----------- ##
+## confdefs.h. ##
+## ----------- ##
+
+/* confdefs.h */
+#define PACKAGE_NAME "RISC-V Proxy Kernel"
+#define PACKAGE_TARNAME "riscv-pk"
+#define PACKAGE_VERSION "1.0.0"
+#define PACKAGE_STRING "RISC-V Proxy Kernel 1.0.0"
+#define PACKAGE_BUGREPORT "Andrew Waterman"
+#define PACKAGE_URL ""
+
+configure: exit 77

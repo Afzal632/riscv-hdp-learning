@@ -1,0 +1,7 @@
+     12 lw
+      6 mul
+      4 add
+      3 addi
+      2 sw
+      1 jalr
+      1 bne

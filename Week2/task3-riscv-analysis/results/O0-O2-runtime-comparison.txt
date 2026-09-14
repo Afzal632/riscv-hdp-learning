@@ -1,0 +1,3 @@
+counter: O0 and O2 outputs MATCH
+alu: O0 and O2 outputs MATCH
+matrix: O0 and O2 outputs MATCH

@@ -1,0 +1,5 @@
+Installed pk:
+/usr/local/riscv32-unknown-elf/bin/pk
+
+Installed bbl:
+/usr/local/riscv32-unknown-elf/bin/bbl

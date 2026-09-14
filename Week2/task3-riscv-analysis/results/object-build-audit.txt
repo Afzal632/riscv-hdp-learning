@@ -1,0 +1,42 @@
+Compiled O0/counter.o
+Compiled O0/alu.o
+Compiled O0/matrix.o
+Compiled O2/counter.o
+Compiled O2/alu.o
+Compiled O2/matrix.o
+
+Week2/task3-riscv-analysis/build/O0/alu.o:     file format elf32-littleriscv
+architecture: riscv:rv32, flags 0x00000011:
+HAS_RELOC, HAS_SYMS
+start address 0x00000000
+
+
+Week2/task3-riscv-analysis/build/O0/counter.o:     file format elf32-littleriscv
+architecture: riscv:rv32, flags 0x00000011:
+HAS_RELOC, HAS_SYMS
+start address 0x00000000
+
+
+Week2/task3-riscv-analysis/build/O0/matrix.o:     file format elf32-littleriscv
+architecture: riscv:rv32, flags 0x00000011:
+HAS_RELOC, HAS_SYMS
+start address 0x00000000
+
+
+Week2/task3-riscv-analysis/build/O2/alu.o:     file format elf32-littleriscv
+architecture: riscv:rv32, flags 0x00000011:
+HAS_RELOC, HAS_SYMS
+start address 0x00000000
+
+
+Week2/task3-riscv-analysis/build/O2/counter.o:     file format elf32-littleriscv
+architecture: riscv:rv32, flags 0x00000011:
+HAS_RELOC, HAS_SYMS
+start address 0x00000000
+
+
+Week2/task3-riscv-analysis/build/O2/matrix.o:     file format elf32-littleriscv
+architecture: riscv:rv32, flags 0x00000011:
+HAS_RELOC, HAS_SYMS
+start address 0x00000000
+

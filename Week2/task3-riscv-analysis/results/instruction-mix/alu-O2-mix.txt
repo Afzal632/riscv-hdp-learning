@@ -1,0 +1,12 @@
+      7 jalr
+      5 andi
+      3 addi
+      2 add
+      1 xor
+      1 sub
+      1 slli
+      1 or
+      1 lw
+      1 lui
+      1 bltu
+      1 and

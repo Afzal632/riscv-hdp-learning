@@ -1,0 +1,3 @@
+Picolibc specification:
+/usr/lib/gcc/riscv64-unknown-elf/13.2.0/picolibc.specs
+Picolibc header test passed

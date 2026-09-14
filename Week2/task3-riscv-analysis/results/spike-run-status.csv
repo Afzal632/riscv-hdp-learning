@@ -1,0 +1,7 @@
+program,optimization,exit_status
+counter,O0,0
+alu,O0,0
+matrix,O0,0
+counter,O2,0
+alu,O2,0
+matrix,O2,0

@@ -1,0 +1,11 @@
+=== Configuring pk ===
+Configuration passed.
+=== Building pk with one job ===
+PK BUILD FAILED
+riscv64-unknown-elf-gcc -MMD -MP -Wall -Werror -D__NO_INLINE__ -mcmodel=medany -O2 -std=gnu99 -Wno-unused -Wno-attributes -fno-delete-null-pointer-checks -fno-PIE  -march=rv32i_zicsr_zifencei -mabi=ilp32 -DBBL_LOGO_FILE=\"bbl_logo_file\" -DMEM_START=0x80000000 -fno-stack-protector -U_FORTIFY_SOURCE -DBBL_PAYLOAD=\"bbl_payload\" -I. -I/home/afzal/riscv-tools-src/riscv-pk/pk -I/home/afzal/riscv-tools-src/riscv-pk/bbl -I/home/afzal/riscv-tools-src/riscv-pk/softfloat -I/home/afzal/riscv-tools-src/riscv-pk/dummy_payload -I/home/afzal/riscv-tools-src/riscv-pk/machine -I/home/afzal/riscv-tools-src/riscv-pk/util -c /home/afzal/riscv-tools-src/riscv-pk/pk/file.c
+In file included from /home/afzal/riscv-tools-src/riscv-pk/pk/file.c:3:
+/home/afzal/riscv-tools-src/riscv-pk/pk/file.h:6:10: fatal error: sys/stat.h: No such file or directory
+    6 | #include <sys/stat.h>
+      |          ^~~~~~~~~~~~
+compilation terminated.
+make: *** [Makefile:336: file.o] Error 1

@@ -1,0 +1,7 @@
+   text	   data	    bss	    dec	    hex	filename
+   1036	      0	      0	   1036	    40c	Week2/task3-riscv-analysis/build/O0/alu.o
+    144	      0	      0	    144	     90	Week2/task3-riscv-analysis/build/O0/counter.o
+    936	      0	      0	    936	    3a8	Week2/task3-riscv-analysis/build/O0/matrix.o
+    628	      0	      0	    628	    274	Week2/task3-riscv-analysis/build/O2/alu.o
+    124	      0	      0	    124	     7c	Week2/task3-riscv-analysis/build/O2/counter.o
+    637	      0	      0	    637	    27d	Week2/task3-riscv-analysis/build/O2/matrix.o

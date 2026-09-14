@@ -1,0 +1,76 @@
+RUN STATUSES
+program  optimization  exit_status
+counter  O0            0
+alu      O0            0
+matrix   O0            0
+counter  O2            0
+alu      O2            0
+matrix   O2            0
+
+===== counter O0 =====
+Count value is: 0
+Count value is: 1
+Count value is: 2
+Count value is: 3
+Count value is: 4
+Count value is: 5
+Count value is: 6
+Count value is: 7
+Count value is: 8
+Count value is: 9
+Count value is: 10
+Count value is: 11
+Count value is: 12
+Count value is: 13
+Count value is: 14
+Count value is: 15
+Count value is: 0
+Count value is: 1
+
+===== counter O2 =====
+Count value is: 0
+Count value is: 1
+Count value is: 2
+Count value is: 3
+Count value is: 4
+Count value is: 5
+Count value is: 6
+Count value is: 7
+Count value is: 8
+Count value is: 9
+Count value is: 10
+Count value is: 11
+Count value is: 12
+Count value is: 13
+Count value is: 14
+Count value is: 15
+Count value is: 0
+Count value is: 1
+
+===== alu O0 =====
+ADD: A=9 B=8 result=1 signed=1 PASS
+SUB: A=3 B=5 result=14 signed=-2 PASS
+AND: A=12 B=10 result=8 signed=-8 PASS
+OR: A=12 B=3 result=15 signed=-1 PASS
+XOR: A=12 B=10 result=6 signed=6 PASS
+ALU TEST PASSED
+
+===== alu O2 =====
+ADD: A=9 B=8 result=1 signed=1 PASS
+SUB: A=3 B=5 result=14 signed=-2 PASS
+AND: A=12 B=10 result=8 signed=-8 PASS
+OR: A=12 B=3 result=15 signed=-1 PASS
+XOR: A=12 B=10 result=6 signed=6 PASS
+ALU TEST PASSED
+
+===== matrix O0 =====
+Result matrix:
+58 64
+139 154
+MATRIX TEST PASSED
+
+===== matrix O2 =====
+Result matrix:
+58 64
+139 154
+MATRIX TEST PASSED

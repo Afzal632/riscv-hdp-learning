@@ -1,0 +1,9 @@
+     20 lw
+     13 sw
+     13 addi
+      8 add
+      7 slli
+      3 jal
+      3 bge
+      1 mul
+      1 jalr

@@ -1,0 +1,7 @@
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... riscv64-unknown-elf
+checking for riscv64-unknown-elf-gcc... riscv64-unknown-elf-gcc
+checking whether the C compiler works... no
+configure: error: in `/home/afzal/riscv-tools-build/riscv-pk-rv32':
+configure: error: C compiler cannot create executables
+See `config.log' for more details

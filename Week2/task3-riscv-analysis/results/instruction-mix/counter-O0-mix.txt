@@ -1,0 +1,9 @@
+     10 addi
+      7 sw
+      7 lw
+      2 jalr
+      1 lui
+      1 jal
+      1 bne
+      1 bgeu
+      1 auipc

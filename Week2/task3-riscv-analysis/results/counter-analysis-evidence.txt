@@ -1,0 +1,74 @@
+===== COUNTER SOURCE =====
+     1	#include <stdio.h>
+     2	
+     3	#define SAMPLE_COUNT 18
+     4	
+     5	int main(void)
+     6	{
+     7	    unsigned int count = 0;
+     8	
+     9	    for (unsigned int sample = 0; sample < SAMPLE_COUNT; sample++) {
+    10	        printf("Count value is: %u\n", count);
+    11	
+    12	        count++;
+    13	
+    14	        if (count == 16U)
+    15	            count = 0U;
+    16	    }
+    17	
+    18	    return 0;
+    19	}
+
+===== STATIC INSTRUCTION COUNTS =====
+program,optimization,function,static_instructions
+counter,O0,main,31
+counter,O2,main,26
+
+===== COUNTER O0 MAIN =====
+00000000 <main>:
+   0:	fe010113          	addi	x2,x2,-32
+   4:	00112e23          	sw	x1,28(x2)
+   8:	00812c23          	sw	x8,24(x2)
+   c:	02010413          	addi	x8,x2,32
+  10:	fe042623          	sw	x0,-20(x8)
+
+
+===== COUNTER O0 INSTRUCTION MIX =====
+     10 addi
+      7 sw
+      7 lw
+      2 jalr
+      1 lui
+      1 jal
+      1 bne
+      1 bgeu
+      1 auipc
+
+===== COUNTER O2 MAIN =====
+00000000 <main>:
+   0:	ff010113          	addi	x2,x2,-16
+   4:	00812423          	sw	x8,8(x2)
+   8:	00912223          	sw	x9,4(x2)
+   c:	01212023          	sw	x18,0(x2)
+  10:	00112623          	sw	x1,12(x2)
+  14:	01200493          	addi	x9,x0,18
+  18:	00000413          	addi	x8,x0,0
+  1c:	00000937          	lui	x18,0x0
+			1c: R_RISCV_HI20	.LC0
+			1c: R_RISCV_RELAX	*ABS*
+
+
+===== COUNTER O2 INSTRUCTION MIX =====
+     10 addi
+      4 sw
+      4 lw
+      2 jalr
+      1 sub
+      1 sltu
+      1 lui
+      1 bne
+      1 auipc
+      1 and
+
+===== RUNTIME COMPARISON =====
+counter: O0 and O2 outputs MATCH

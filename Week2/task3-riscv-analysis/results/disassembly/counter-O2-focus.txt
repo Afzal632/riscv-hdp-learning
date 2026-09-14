@@ -1,0 +1,50 @@
+
+Week2/task3-riscv-analysis/build/O2/counter.o:     file format elf32-littleriscv
+
+
+Disassembly of section .text.startup:
+
+00000000 <main>:
+   0:	ff010113          	addi	x2,x2,-16
+   4:	00812423          	sw	x8,8(x2)
+   8:	00912223          	sw	x9,4(x2)
+   c:	01212023          	sw	x18,0(x2)
+  10:	00112623          	sw	x1,12(x2)
+  14:	01200493          	addi	x9,x0,18
+  18:	00000413          	addi	x8,x0,0
+  1c:	00000937          	lui	x18,0x0
+			1c: R_RISCV_HI20	.LC0
+			1c: R_RISCV_RELAX	*ABS*
+
+00000020 <.L3>:
+  20:	00040593          	addi	x11,x8,0
+  24:	00090513          	addi	x10,x18,0 # 0 <main>
+			24: R_RISCV_LO12_I	.LC0
+			24: R_RISCV_RELAX	*ABS*
+  28:	00000097          	auipc	x1,0x0
+			28: R_RISCV_CALL_PLT	printf
+			28: R_RISCV_RELAX	*ABS*
+  2c:	000080e7          	jalr	x1,0(x1) # 28 <.L3+0x8>
+
+00000030 <.LVL2>:
+  30:	ff140793          	addi	x15,x8,-15
+  34:	00f037b3          	sltu	x15,x0,x15
+  38:	00140413          	addi	x8,x8,1
+
+0000003c <.LVL3>:
+  3c:	40f007b3          	sub	x15,x0,x15
+  40:	fff48493          	addi	x9,x9,-1
+  44:	00f47433          	and	x8,x8,x15
+  48:	fc049ce3          	bne	x9,x0,20 <.L3>
+			48: R_RISCV_BRANCH	.L3
+
+0000004c <.LBE3>:
+  4c:	00c12083          	lw	x1,12(x2)
+  50:	00812403          	lw	x8,8(x2)
+
+00000054 <.LVL5>:
+  54:	00412483          	lw	x9,4(x2)
+  58:	00012903          	lw	x18,0(x2)
+  5c:	00000513          	addi	x10,x0,0
+  60:	01010113          	addi	x2,x2,16
+  64:	00008067          	jalr	x0,0(x1)

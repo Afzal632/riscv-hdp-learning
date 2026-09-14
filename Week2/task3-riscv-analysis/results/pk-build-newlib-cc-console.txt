@@ -1,0 +1,7 @@
+=== Configuring pk with explicit Newlib include path ===
+
+=== Checking generated compiler settings ===
+
+Newlib include path confirmed.
+=== Building pk with one job ===
+PK BUILD PASSED

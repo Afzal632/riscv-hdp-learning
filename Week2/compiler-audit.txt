@@ -1,0 +1,40 @@
+riscv64-unknown-elf-gcc (13.2.0-11ubuntu1+12) 13.2.0
+Copyright (C) 2023 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+.;
+rv32e/ilp32e;@march=rv32e@mabi=ilp32e
+rv32ea/ilp32e;@march=rv32ea@mabi=ilp32e
+rv32em/ilp32e;@march=rv32em@mabi=ilp32e
+rv32eac/ilp32e;@march=rv32eac@mabi=ilp32e
+rv32emac/ilp32e;@march=rv32emac@mabi=ilp32e
+rv32i/ilp32;@march=rv32i@mabi=ilp32
+rv32ia/ilp32;@march=rv32ia@mabi=ilp32
+rv32im/ilp32;@march=rv32im@mabi=ilp32
+rv32if/ilp32f;@march=rv32if@mabi=ilp32f
+rv32ifd/ilp32d;@march=rv32ifd@mabi=ilp32d
+rv32iaf/ilp32f;@march=rv32iaf@mabi=ilp32f
+rv32iafd/ilp32d;@march=rv32iafd@mabi=ilp32d
+rv32imf/ilp32f;@march=rv32imf@mabi=ilp32f
+rv32imfd/ilp32d;@march=rv32imfd@mabi=ilp32d
+rv32iac/ilp32;@march=rv32iac@mabi=ilp32
+rv32imac/ilp32;@march=rv32imac@mabi=ilp32
+rv32imafc/ilp32f;@march=rv32imafc@mabi=ilp32f
+rv32imafdc/ilp32d;@march=rv32imafdc@mabi=ilp32d
+rv64i/lp64;@march=rv64i@mabi=lp64
+rv64ia/lp64;@march=rv64ia@mabi=lp64
+rv64im/lp64;@march=rv64im@mabi=lp64
+rv64if/lp64f;@march=rv64if@mabi=lp64f
+rv64ifd/lp64d;@march=rv64ifd@mabi=lp64d
+rv64iaf/lp64f;@march=rv64iaf@mabi=lp64f
+rv64iafd/lp64d;@march=rv64iafd@mabi=lp64d
+rv64imf/lp64f;@march=rv64imf@mabi=lp64f
+rv64iac/lp64;@march=rv64iac@mabi=lp64
+rv64imac/lp64;@march=rv64imac@mabi=lp64
+rv64imafc/lp64f;@march=rv64imafc@mabi=lp64f
+GNU objdump (2.42-1ubuntu1+6) 2.42
+Copyright (C) 2024 Free Software Foundation, Inc.
+This program is free software; you may redistribute it under the terms of
+the GNU General Public License version 3 or (at your option) any later version.
+This program has absolutely no warranty.

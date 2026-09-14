@@ -1,0 +1,7 @@
+program,optimization,function,static_instructions
+counter,O0,main,31
+alu,O0,alu4,49
+matrix,O0,matrix_multiply,69
+counter,O2,main,26
+alu,O2,alu4,25
+matrix,O2,matrix_multiply,29
