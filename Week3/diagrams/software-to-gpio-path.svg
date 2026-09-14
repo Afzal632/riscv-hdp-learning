@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1050" viewBox="0 0 1600 1050" role="img" aria-labelledby="title desc">
+  <title id="title">RISC-V GPIO software-to-hardware path</title>
+  <desc id="desc">A two-direction architecture diagram showing sensors flowing through RTL input mapping and custom x30 GPIO fields into digital read operations and application C, and application decisions flowing through digital write operations, x30 output fields, RTL output mapping, and actuators.</desc>
+  <defs>
+    <marker id="arrowBlue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L12,6 L0,12 z" fill="#d97706"/>
+    </marker>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.14"/>
+    </filter>
+    <style>
+      .title { font: 700 42px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .subtitle { font: 400 21px Arial, Helvetica, sans-serif; fill: #475569; }
+      .section { font: 700 20px Arial, Helvetica, sans-serif; letter-spacing: 1.5px; fill: #475569; }
+      .box-title { font: 700 25px Arial, Helvetica, sans-serif; fill: #0f172a; }
+      .box-text { font: 400 19px Arial, Helvetica, sans-serif; fill: #334155; }
+      .small { font: 400 17px Arial, Helvetica, sans-serif; fill: #475569; }
+      .bit { font: 700 18px 'Courier New', monospace; fill: #0f172a; }
+      .arrow-label { font: 700 18px Arial, Helvetica, sans-serif; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1050" fill="#f8fafc"/>
+  <text x="800" y="60" text-anchor="middle" class="title">RISC-V GPIO Software-to-Hardware Path</text>
+  <text x="800" y="96" text-anchor="middle" class="subtitle">Custom x30 interface used by the course processor — not standard RV32I behaviour</text>
+
+  <rect x="90" y="135" width="1420" height="270" rx="24" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="120" y="172" class="section">SOFTWARE EXECUTING ON THE PROCESSOR</text>
+
+  <rect x="600" y="195" width="400" height="150" rx="18" fill="#ede9fe" stroke="#7c3aed" stroke-width="3" filter="url(#shadow)"/>
+  <text x="800" y="238" text-anchor="middle" class="box-title">Application C</text>
+  <text x="800" y="276" text-anchor="middle" class="box-text">Security decision logic</text>
+  <text x="800" y="307" text-anchor="middle" class="small">armed • enclosure open • tamper • reset</text>
+
+  <rect x="160" y="215" width="320" height="120" rx="16" fill="#dbeafe" stroke="#2563eb" stroke-width="3" filter="url(#shadow)"/>
+  <text x="320" y="255" text-anchor="middle" class="box-title">digitalRead</text>
+  <text x="320" y="292" text-anchor="middle" class="bit">(x30 &gt;&gt; bit) &amp; 1</text>
+
+  <rect x="1120" y="215" width="320" height="120" rx="16" fill="#ffedd5" stroke="#d97706" stroke-width="3" filter="url(#shadow)"/>
+  <text x="1280" y="255" text-anchor="middle" class="box-title">digitalWrite</text>
+  <text x="1280" y="292" text-anchor="middle" class="bit">clear → shift → OR</text>
+
+  <path d="M480 275 H585" fill="none" stroke="#2563eb" stroke-width="5" marker-end="url(#arrowBlue)"/>
+  <text x="532" y="253" text-anchor="middle" class="arrow-label" fill="#2563eb">input value</text>
+  <path d="M1000 275 H1105" fill="none" stroke="#d97706" stroke-width="5" marker-end="url(#arrowOrange)"/>
+  <text x="1052" y="253" text-anchor="middle" class="arrow-label" fill="#d97706">output command</text>
+
+  <line x1="90" y1="450" x2="1510" y2="450" stroke="#64748b" stroke-width="3" stroke-dasharray="12 10"/>
+  <rect x="553" y="430" width="494" height="40" rx="20" fill="#f8fafc"/>
+  <text x="800" y="457" text-anchor="middle" class="section">SOFTWARE-VISIBLE HARDWARE INTERFACE</text>
+
+  <rect x="260" y="500" width="1080" height="190" rx="22" fill="#ecfeff" stroke="#0891b2" stroke-width="4" filter="url(#shadow)"/>
+  <text x="800" y="548" text-anchor="middle" class="box-title">Custom x30 GPIO Register View</text>
+  <text x="800" y="580" text-anchor="middle" class="small">RTL combines externally driven input fields with processor-controlled output fields</text>
+
+  <rect x="305" y="610" width="300" height="50" rx="8" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+  <text x="455" y="642" text-anchor="middle" class="bit">x30[31:28] INPUTS</text>
+  <rect x="605" y="610" width="390" height="50" rx="8" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+  <text x="800" y="642" text-anchor="middle" class="bit">x30[27:4] RESERVED</text>
+  <rect x="995" y="610" width="300" height="50" rx="8" fill="#fed7aa" stroke="#d97706" stroke-width="2"/>
+  <text x="1145" y="642" text-anchor="middle" class="bit">x30[3:0] OUTPUTS</text>
+
+  <path d="M455 500 V355 H320 V343" fill="none" stroke="#2563eb" stroke-width="5" marker-end="url(#arrowBlue)"/>
+  <text x="422" y="422" text-anchor="end" class="arrow-label" fill="#2563eb">read</text>
+  <path d="M1280 343 V355 H1145 V500" fill="none" stroke="#d97706" stroke-width="5" marker-end="url(#arrowOrange)"/>
+  <text x="1177" y="422" class="arrow-label" fill="#d97706">write</text>
+
+  <rect x="90" y="735" width="1420" height="245" rx="24" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="120" y="775" class="section">RTL WRAPPER AND EXTERNAL WORLD</text>
+
+  <rect x="145" y="815" width="320" height="110" rx="16" fill="#dbeafe" stroke="#2563eb" stroke-width="3" filter="url(#shadow)"/>
+  <text x="305" y="855" text-anchor="middle" class="box-title">External Sensors</text>
+  <text x="305" y="892" text-anchor="middle" class="small">armed • open • tamper • reset</text>
+
+  <rect x="565" y="815" width="470" height="110" rx="16" fill="#dcfce7" stroke="#16a34a" stroke-width="3" filter="url(#shadow)"/>
+  <text x="800" y="855" text-anchor="middle" class="box-title">Top-Level Verilog Wrapper</text>
+  <text x="800" y="892" text-anchor="middle" class="small">Input mapping • output mapping • pin direction</text>
+
+  <rect x="1135" y="815" width="320" height="110" rx="16" fill="#ffedd5" stroke="#d97706" stroke-width="3" filter="url(#shadow)"/>
+  <text x="1295" y="855" text-anchor="middle" class="box-title">External Actuators</text>
+  <text x="1295" y="892" text-anchor="middle" class="small">alarm • SOS request • status LEDs</text>
+
+  <path d="M465 870 H550" fill="none" stroke="#2563eb" stroke-width="5" marker-end="url(#arrowBlue)"/>
+  <path d="M800 815 V705" fill="none" stroke="#2563eb" stroke-width="5" marker-end="url(#arrowBlue)"/>
+  <text x="777" y="755" text-anchor="end" class="arrow-label" fill="#2563eb">input mapping</text>
+
+  <path d="M1035 870 H1120" fill="none" stroke="#d97706" stroke-width="5" marker-end="url(#arrowOrange)"/>
+  <path d="M1145 690 V760 H1018 V815" fill="none" stroke="#d97706" stroke-width="5" marker-end="url(#arrowOrange)"/>
+  <text x="1168" y="750" class="arrow-label" fill="#d97706">output mapping</text>
+
+  <text x="800" y="1020" text-anchor="middle" class="small">Blue: external information flowing into software • Orange: software decisions controlling external outputs</text>
+</svg>
